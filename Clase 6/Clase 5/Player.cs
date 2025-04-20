@@ -12,9 +12,9 @@ namespace MyGame
 
         private PlayerController playerController;
         private Transform transform;
-
+        private int health = 100;
         private Animation currentAnimation;
-        
+        private bool isDead = false;       
 
         public Player(float positionX, float positionY)
         {
@@ -32,7 +32,7 @@ namespace MyGame
 
             for (int i = 0; i < 4; i++)
             {
-                Image image = Engine.LoadImage($"assets/Player/{i}.png");
+                Image image = Engine.LoadImage($"assets/player/{i}.png");
                 images.Add(image);
             }
 
@@ -41,6 +41,7 @@ namespace MyGame
 
         public void Update()
         {
+            if (isDead) return;
             playerController.Update();
             currentAnimation.Update();
             CheckCollisions();
@@ -67,7 +68,19 @@ namespace MyGame
 
         public void Render()
         {
+            if (isDead)
             Engine.Draw(currentAnimation.CurrentImage, transform.Position.x, transform.Position.y);
+        }
+
+        public void GetDamage(int damage)
+        {
+            health -= damage;
+
+            if (health < 0)
+            {
+                isDead = true;
+                GameManager.Instance.ChangeGameStatus(gameStatus.lose);
+            }
         }
     }
 }

@@ -70,6 +70,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="assets\Win.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\bullet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -19,6 +19,7 @@ namespace MyGame
      
         private Image mainMenu = Engine.LoadImage("assets/MainMenu.png");
         private Image loseScreen = Engine.LoadImage("assets/Lose.png");
+        private Image winScreen = Engine.LoadImage("assets/Win.png");
         private LevelController levelController;
 
         public LevelController LevelController => levelController;
@@ -53,10 +54,29 @@ namespace MyGame
                     levelController.Update();
                     break;
                 case gameStatus.win:
-                    //logica de victoria
+                    if (Engine.GetKey(Engine.KEY_1))
+                    {
+                        gameStage = gameStatus.menu;
+                        levelController = new LevelController();
+                    }
+                    if (Engine.GetKey(Engine.KEY_2))
+                    {
+                        gameStage = gameStatus.game;
+                        levelController = new LevelController();
+                    }
                     break;
                 case gameStatus.lose:
-                    //logica de derrota
+                    if(Engine.GetKey(Engine.KEY_1))
+                    {
+                        gameStage = gameStatus.menu;
+                        levelController = new LevelController();
+                    }
+                    if (Engine.GetKey(Engine.KEY_2))
+                    {
+                        gameStage = gameStatus.game;
+                        levelController = new LevelController();
+                    }
+
                     break;
             }
         }
@@ -74,7 +94,9 @@ namespace MyGame
                     levelController.Render();
                     break;
                 case gameStatus.win:
-                    //render de victoria
+                    Engine.Clear();
+                    Engine.Draw(winScreen, 0, 0);
+                    Engine.Show();
                     break;
                 case gameStatus.lose:
                     Engine.Clear();
@@ -89,8 +111,4 @@ namespace MyGame
             gameStage = status;
         }
     }
-
-
-
-
 }
