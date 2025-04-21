@@ -20,12 +20,9 @@ namespace MyGame
 
         public Enemy(float positionX, float positionY)
         {
-            transform = new Transform(new Vector2(positionX, positionY), new Vector2(60,60));
+            transform = new Transform(new Vector2(positionX, positionY), new Vector2(5, 5));  // Tamaño del enemigo
             enemyMovement = new EnemyMovement(transform);
-            
-
             CreateAnimation();
-            
         }
 
         public void CreateAnimation()
@@ -52,6 +49,7 @@ namespace MyGame
             Engine.Draw(currentAnimation.CurrentImage, transform.Position.x, transform.Position.y);
         }
 
+        // Método para recibir daño
         public void GetDamage(int damage)
         {
             health -= damage;
@@ -61,5 +59,18 @@ namespace MyGame
                 GameManager.Instance.LevelController.EnemyList.Remove(this);
             }
         }
+
+        // Método para verificar colisiones con balas
+        public bool CheckCollision(Bullet bullet)
+        {
+            float bulletX = bullet.Transform.Position.x;
+            float bulletY = bullet.Transform.Position.y;
+            float bulletRadius = bullet.Radius;  // Este sí está bien
+
+            // Comprobar si el círculo de la bala se superpone con el rectángulo del enemigo
+            return bulletX + bulletRadius > transform.Position.x && bulletX - bulletRadius < transform.Position.x + transform.Size.x &&
+                   bulletY + bulletRadius > transform.Position.y && bulletY - bulletRadius < transform.Position.y + transform.Size.y;
+        }
+
     }
 }

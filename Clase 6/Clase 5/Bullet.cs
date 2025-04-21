@@ -8,52 +8,35 @@ namespace MyGame
 {
     public class Bullet
     {
+        private Transform transform;
+        private Vector2 direction;
+        private float speed = 500f; // Velocidad de la bala
+        private float radius = 5f; // Radio de la bala
         private Image bulletImage = Engine.LoadImage("assets/bullet.png");
 
-        private float posX = 0;
-        private float posY = 0;
+        public Transform Transform => transform;
+        public float Radius => radius;
 
-        private float scaleX = 4;
-        private float scaleY = 10;
-
-        private float speed = 2;
-
-        public Bullet(float positionX, float positionY)
+        public Bullet(float x, float y, float dirX, float dirY)
         {
-            posX = positionX;
-            posY = positionY;
+            transform = new Transform(new Vector2(x, y), new Vector2(radius * 2, radius * 2)); // Tamaño visual de la bala
+            direction = new Vector2(dirX, dirY);
         }
 
         public void Update()
         {
-            posY -= speed;
-            CheckCollisions();
+            Vector2 pos = transform.Position; // Copiamos la posición actual
+            pos.x += direction.x * speed * Time.DeltaTime;
+            pos.y += direction.y * speed * Time.DeltaTime;
+            transform.Position = pos; // Volvemos a asignarla
+            
         }
 
-        private void CheckCollisions()
-        {
-            for (int i = 0; i < GameManager.Instance.LevelController.EnemyList.Count; i++)
-            {
-                Enemy enemy = GameManager.Instance.LevelController.EnemyList[i];
-
-                float DistanceX = Math.Abs((enemy.Transform.Position.x + enemy.Transform.Scale.x /2) - posX + (scaleX /2));
-                float DistanceY = Math.Abs((enemy.Transform.Position.y + enemy.Transform.Scale.y / 2) - posY + (scaleY / 2));
-
-                float sumHalfWidth = enemy.Transform.Scale.x / 2 + scaleX / 2;
-                float sumHalfHeight = enemy.Transform.Scale.y / 2 + scaleY / 2;
-
-                if (DistanceX < sumHalfWidth && DistanceY < sumHalfHeight)
-                {
-                    //Program.EnemyList.Remove(enemy);
-                    enemy.GetDamage(60);
-                    GameManager.Instance.LevelController.BulletList.Remove(this);
-                }
-            }
-        }
 
         public void Render()
         {
-            Engine.Draw(bulletImage, posX, posY);
+            Engine.Draw(bulletImage, transform.Position.x, transform.Position.y);
         }
     }
 }
+

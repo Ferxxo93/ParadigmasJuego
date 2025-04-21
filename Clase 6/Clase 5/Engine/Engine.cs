@@ -226,7 +226,7 @@ class Engine
 
 
 
-public static void ErrorFatal(string texto)
+    public static void ErrorFatal(string texto)
     {
         System.Console.WriteLine(texto);
         Environment.Exit(1);

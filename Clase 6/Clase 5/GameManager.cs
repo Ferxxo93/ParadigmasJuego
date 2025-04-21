@@ -42,7 +42,7 @@ namespace MyGame
         }
         public void Update()
         {
-            switch(gameStage)
+            switch (gameStage)
             {
                 case gameStatus.menu:
                     if (Engine.GetKey(Engine.KEY_ESP))
@@ -52,6 +52,12 @@ namespace MyGame
                     break;
                 case gameStatus.game:
                     levelController.Update();
+
+                    // Verificar si todos los enemigos han sido eliminados
+                    if (levelController.AllEnemiesEliminated()) // Método que comprueba si no hay enemigos
+                    {
+                        gameStage = gameStatus.win;
+                    }
                     break;
                 case gameStatus.win:
                     if (Engine.GetKey(Engine.KEY_1))
@@ -66,7 +72,7 @@ namespace MyGame
                     }
                     break;
                 case gameStatus.lose:
-                    if(Engine.GetKey(Engine.KEY_1))
+                    if (Engine.GetKey(Engine.KEY_1))
                     {
                         gameStage = gameStatus.menu;
                         levelController = new LevelController();
@@ -76,10 +82,10 @@ namespace MyGame
                         gameStage = gameStatus.game;
                         levelController = new LevelController();
                     }
-
                     break;
             }
         }
+
 
         public void Render()
         {
@@ -87,7 +93,7 @@ namespace MyGame
             {
                 case gameStatus.menu:
                     Engine.Clear();
-                    Engine.Draw(mainMenu,0,0);
+                    Engine.Draw(mainMenu, 0, 0);
                     Engine.Show();
                     break;
                 case gameStatus.game:
@@ -95,7 +101,7 @@ namespace MyGame
                     break;
                 case gameStatus.win:
                     Engine.Clear();
-                    Engine.Draw(winScreen, 0, 0);
+                    Engine.Draw(winScreen, 0, 0); // Mostrar la pantalla de victoria
                     Engine.Show();
                     break;
                 case gameStatus.lose:
@@ -105,6 +111,7 @@ namespace MyGame
                     break;
             }
         }
+
 
         public void ChangeGameStatus(gameStatus status)
         {

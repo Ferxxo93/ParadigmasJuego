@@ -9,9 +9,8 @@ namespace MyGame
     public class Time
     {
         static private float deltaTime;
-        static private DateTime initialTime;
+        static public DateTime initialTime;
         static private float timeLastFrame;
-
         static public float DeltaTime => deltaTime;
 
         public Time()
