@@ -13,7 +13,7 @@ namespace MyGame
 
         public Barrel(float posX, float posY)
         {
-            Transform = new Transform(new Vector2(posX, posY), new Vector2(32, 32));
+            Transform = new Transform(new Vector2(posX, posY), new Vector2(32,32));
             Image = Engine.LoadImage("assets/Barrel.png");
         }
 

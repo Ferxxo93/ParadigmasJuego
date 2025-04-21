@@ -9,7 +9,7 @@ namespace MyGame
     public class PlayerController
     {
         private DateTime timeLastShoot;
-        private float timebetweetShoot = 0.2f;
+        private float timebetweetShoot = 0.4f;
         private int speed = 5;
 
         private Transform tranform;
@@ -25,21 +25,26 @@ namespace MyGame
             if (Engine.GetKey(Engine.KEY_A))
             {
                 tranform.Translate(new Vector2(-1,0), speed);
+                shootDirection = new Vector2(-1, 0);
             }
 
             if (Engine.GetKey(Engine.KEY_D))
             {
                 tranform.Translate(new Vector2(1, 0), speed);
+                shootDirection = new Vector2(1, 0);
             }
 
             if (Engine.GetKey(Engine.KEY_W))
             {
                 tranform.Translate(new Vector2(0,-1), speed);
+                shootDirection = new Vector2(0, -1);
+
             }
 
             if (Engine.GetKey(Engine.KEY_S))
             {
                 tranform.Translate(new Vector2(0, 1), speed);
+                shootDirection = new Vector2(0, 1);
             }
             if (Engine.GetKey(Engine.KEY_K))
             {
@@ -53,7 +58,7 @@ namespace MyGame
             {
                 float startX = tranform.Position.x + tranform.Scale.x / 2;
                 float startY = tranform.Position.y;
-                GameManager.Instance.LevelController.AddBullet(startX, startY, 0, -1);
+                GameManager.Instance.LevelController.AddBullet(startX, startY, shootDirection.x, shootDirection.y);
                 timeLastShoot = DateTime.Now;
             }
 
