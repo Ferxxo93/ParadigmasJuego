@@ -21,7 +21,7 @@ namespace MyGame
         private Image winScreen = Engine.LoadImage("assets/Win.png");
         private LevelController levelController;
 
-        private float winTimeSeconds = 30f; 
+        private float winTimeSeconds = 15f; 
         private float gameStartTime = 0f;
 
         public LevelController LevelController => levelController;
@@ -62,11 +62,11 @@ namespace MyGame
                     float currentTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
 
                     // Ganar por eliminar enemigos
-                    if (levelController.AllEnemiesEliminated())
+                    /*if (levelController.AllEnemiesEliminated())
                     {
                         gameStage = gameStatus.win;
                     }
-
+                    */
                     // Ganar por tiempo cumplido
                     if (currentTime - gameStartTime >= winTimeSeconds)
                     {

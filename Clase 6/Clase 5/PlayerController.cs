@@ -12,7 +12,7 @@ namespace MyGame
         private Vector2 shootDirection = new Vector2(0, -1);
 
         private Player player;
-
+        
         public PlayerController(Transform transform, Player player)
         {
             this.transform = transform;
@@ -25,29 +25,31 @@ namespace MyGame
             bool movedRight = false;
             bool movedUp = false;
             bool movedDown = false;
+            Vector2 position = transform.Position;
+            Vector2 scale = transform.Scale;
 
-            if (Engine.GetKey(Engine.KEY_A))
+            if (Engine.GetKey(Engine.KEY_A) && position.x > 0)
             {
                 transform.Translate(new Vector2(-1, 0), speed);
                 shootDirection = new Vector2(-1, 0);
                 movedLeft = true;
             }
 
-            if (Engine.GetKey(Engine.KEY_D))
+            if (Engine.GetKey(Engine.KEY_D) && position.x < 1000)
             {
                 transform.Translate(new Vector2(1, 0), speed);
                 shootDirection = new Vector2(1, 0);
                 movedRight = true;
             }
 
-            if (Engine.GetKey(Engine.KEY_W))
+            if (Engine.GetKey(Engine.KEY_W) && position.y > 0)
             {
                 transform.Translate(new Vector2(0, -1), speed);
                 shootDirection = new Vector2(0, -1);
                 movedUp = true;
             }
 
-            if (Engine.GetKey(Engine.KEY_S))
+            if (Engine.GetKey(Engine.KEY_S) && position.y < 710)
             {
                 transform.Translate(new Vector2(0, 1), speed);
                 shootDirection = new Vector2(0, 1);
