@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,20 +14,23 @@ namespace MyGame
     public class GameManager
     {
         private static GameManager instance;
-        private gameStatus gameStage = gameStatus.menu;    // 0-Menu     1-Game     2-Win    3-Lose
-     
+        private gameStatus gameStage = gameStatus.menu;
+
         private Image mainMenu = Engine.LoadImage("assets/MainMenu.png");
         private Image loseScreen = Engine.LoadImage("assets/Lose.png");
         private Image winScreen = Engine.LoadImage("assets/Win.png");
         private LevelController levelController;
+
+        private float winTimeSeconds = 30f; 
+        private float gameStartTime = 0f;
 
         public LevelController LevelController => levelController;
         public Player Player => LevelController.Player1;
 
         public static GameManager Instance
         {
-            get { 
-            
+            get
+            {
                 if (instance == null)
                 {
                     instance = new GameManager();
@@ -41,6 +43,7 @@ namespace MyGame
         {
             levelController = new LevelController();
         }
+
         public void Update()
         {
             switch (gameStage)
@@ -49,17 +52,28 @@ namespace MyGame
                     if (Engine.GetKey(Engine.KEY_ESP))
                     {
                         gameStage = gameStatus.game;
+                        gameStartTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds; // <<< marca el momento que empieza
                     }
                     break;
+
                 case gameStatus.game:
                     levelController.Update();
 
-                    // Verificar si todos los enemigos han sido eliminados
-                    if (levelController.AllEnemiesEliminated()) // Método que comprueba si no hay enemigos
+                    float currentTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
+
+                    // Ganar por eliminar enemigos
+                    if (levelController.AllEnemiesEliminated())
+                    {
+                        gameStage = gameStatus.win;
+                    }
+
+                    // Ganar por tiempo cumplido
+                    if (currentTime - gameStartTime >= winTimeSeconds)
                     {
                         gameStage = gameStatus.win;
                     }
                     break;
+
                 case gameStatus.win:
                     if (Engine.GetKey(Engine.KEY_1))
                     {
@@ -70,8 +84,10 @@ namespace MyGame
                     {
                         gameStage = gameStatus.game;
                         levelController = new LevelController();
+                        gameStartTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
                     }
                     break;
+
                 case gameStatus.lose:
                     if (Engine.GetKey(Engine.KEY_1))
                     {
@@ -82,11 +98,11 @@ namespace MyGame
                     {
                         gameStage = gameStatus.game;
                         levelController = new LevelController();
+                        gameStartTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
                     }
                     break;
             }
         }
-
 
         public void Render()
         {
@@ -102,7 +118,7 @@ namespace MyGame
                     break;
                 case gameStatus.win:
                     Engine.Clear();
-                    Engine.Draw(winScreen, 0, 0); // Mostrar la pantalla de victoria
+                    Engine.Draw(winScreen, 0, 0);
                     Engine.Show();
                     break;
                 case gameStatus.lose:
@@ -113,10 +129,10 @@ namespace MyGame
             }
         }
 
-
         public void ChangeGameStatus(gameStatus status)
         {
             gameStage = status;
         }
     }
 }
+

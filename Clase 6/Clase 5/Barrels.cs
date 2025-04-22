@@ -9,23 +9,22 @@ namespace MyGame
     public class Barrel
     {
         public Transform Transform;
-        public Image Image;
+        private static Image barrelImage = Engine.LoadImage("assets/barrel.png");
 
         public Barrel(float posX, float posY)
         {
-            Transform = new Transform(new Vector2(posX, posY), new Vector2(32,32));
-            Image = Engine.LoadImage("assets/Barrel.png");
+            Transform = new Transform(new Vector2(posX, posY), new Vector2(30, 22));
         }
 
         public void Update()
         {
-
         }
 
         public void Render()
         {
-            Engine.Draw(Image, Transform.Position.x, Transform.Position.y);
+            Engine.Draw(barrelImage, Transform.Position.x, Transform.Position.y);
         }
-    }
 
+    }
 }
+

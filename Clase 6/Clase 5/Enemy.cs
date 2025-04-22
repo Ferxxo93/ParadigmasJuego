@@ -21,7 +21,7 @@ namespace MyGame
 
         public Enemy(float positionX, float positionY)
         {
-            transform = new Transform(new Vector2(positionX, positionY), new Vector2(5, 5));  // Tamaño del enemigo
+            transform = new Transform(new Vector2(positionX, positionY), new Vector2(30, 22));  // Tamaño del enemigo
             enemyMovement = new EnemyMovement(transform);
             CreateAnimation();
         }
@@ -42,15 +42,16 @@ namespace MyGame
         public void Update()
         {
             enemyMovement.Update();
-            currentAnimation.Update();
+            currentAnimation.Update(); 
+            CheckCollisionsBarrels();
         }
 
         public void Render()
         {
             Engine.Draw(currentAnimation.CurrentImage, transform.Position.x, transform.Position.y);
+            
         }
 
-        // Método para recibir daño
         public void GetDamage(int damage)
         {
             health -= damage;
@@ -61,14 +62,50 @@ namespace MyGame
             }
         }
 
-        // Método para verificar colisiones con balas
+        private void CheckCollisionsBarrels()
+        {
+            foreach (var barrel in GameManager.Instance.LevelController.BarrelList)
+            {
+                float DistanceX = Math.Abs((barrel.Transform.Position.x + barrel.Transform.Scale.x / 2) - (transform.Position.x + transform.Scale.x / 2));
+                float DistanceY = Math.Abs((barrel.Transform.Position.y + barrel.Transform.Scale.y / 2) - (transform.Position.y + transform.Scale.y / 2));
+
+                float sumHalfWidth = barrel.Transform.Scale.x / 2 + transform.Scale.x / 2;
+                float sumHalfHeight = barrel.Transform.Scale.y / 2 + transform.Scale.y / 2;
+
+                if (DistanceX < sumHalfWidth && DistanceY < sumHalfHeight)
+                {
+                    float overlapX = sumHalfWidth - DistanceX;
+                    float overlapY = sumHalfHeight - DistanceY;
+
+                    if (overlapX < overlapY)
+                    {
+                        if (transform.Position.x < barrel.Transform.Position.x)
+                            transform.Position = new Vector2(transform.Position.x - overlapX, transform.Position.y);
+                        else
+                            transform.Position = new Vector2(transform.Position.x + overlapX, transform.Position.y);
+                    }
+                    else
+                    {
+                        if (transform.Position.y < barrel.Transform.Position.y)
+                            transform.Position = new Vector2(transform.Position.x, transform.Position.y - overlapY);
+                        else
+                            transform.Position = new Vector2(transform.Position.x, transform.Position.y + overlapY);
+                    }
+
+                    break;
+                }
+            }
+        }
+
+
+
         public bool CheckCollision(Bullet bullet)
         {
             float bulletX = bullet.Transform.Position.x;
             float bulletY = bullet.Transform.Position.y;
             float bulletRadius = bullet.Radius;  // Este sí está bien
 
-            // Comprobar si el círculo de la bala se superpone con el rectángulo del enemigo
+           
             return bulletX + bulletRadius > transform.Position.x && bulletX - bulletRadius < transform.Position.x + transform.Size.x &&
                    bulletY + bulletRadius > transform.Position.y && bulletY - bulletRadius < transform.Position.y + transform.Size.y;
         }

@@ -9,7 +9,7 @@ namespace MyGame
     public class Transform
     {
         private Vector2 position;
-        private Vector2 scale; // ← Internamente sigue llamándose "scale"
+        private Vector2 scale;
 
         public Vector2 Position
         {
@@ -17,12 +17,12 @@ namespace MyGame
             set { position = value; }
         }
 
-        public Vector2 Scale // ← Sigue existiendo como antes
+        public Vector2 Scale 
         {
             get { return scale; }
         }
 
-        public Vector2 Size // ← NUEVO: esta propiedad es solo un alias para scale
+        public Vector2 Size
         {
             get { return scale; }
             set { scale = value; }

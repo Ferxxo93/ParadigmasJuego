@@ -20,7 +20,7 @@ namespace MyGame
 
         public Player(float positionX, float positionY)
         {
-            transform = new Transform(new Vector2(positionX, positionY), new Vector2(200, 200));
+            transform = new Transform(new Vector2(positionX, positionY), new Vector2(30, 55));
             playerController = new PlayerController(transform,this);
             CreateAnimations();
         }
