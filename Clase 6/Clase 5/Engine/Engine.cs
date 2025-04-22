@@ -100,6 +100,12 @@ class Engine
         Sdl.SDL_BlitSurface(image.Pointer, ref origin, screen, ref dest);
     }
 
+    public static void Draw(Image image, float x, float y, bool flipX, bool flipY)
+    {
+        // Por ahora, ignoramos flipX/flipY hasta implementarlo bien
+        Draw(image, x, y);
+    }
+
     public static void Show()
     {
         Sdl.SDL_Flip(screen);

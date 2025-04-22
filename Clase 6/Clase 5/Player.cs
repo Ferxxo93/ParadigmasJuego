@@ -1,30 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace MyGame
 {
     public class Player
     {
-
         private Image playerImage = Engine.LoadImage("assets/Player.png");
         private PlayerController playerController;
         private Transform transform;
         private int health = 100;
         private Animation currentAnimation;
-        private bool isDead = false;       
+        private bool isDead = false;
+
+        private bool flipX = false;
+        private bool movingUp = false;
+        private bool movingDown = false;
+
+        public Transform Transform => transform;
 
         public Player(float positionX, float positionY)
         {
             transform = new Transform(new Vector2(positionX, positionY), new Vector2(200, 200));
-            playerController = new PlayerController(transform);
-
+            playerController = new PlayerController(transform,this);
             CreateAnimations();
-            
-
         }
 
         private void CreateAnimations()
@@ -43,18 +41,34 @@ namespace MyGame
         public void Update()
         {
             if (isDead) return;
+
             playerController.Update();
             currentAnimation.Update();
             CheckCollisionsBarrels();
             CheckCollisionsEnemies();
         }
 
+        public void SetFlip(bool flip)
+        {
+            flipX = flip;
+        }
+
+        public void SetVerticalDirection(bool up, bool down)
+        {
+            movingUp = up;
+            movingDown = down;
+        }
+
+
+        public void Render()
+        {
+            Engine.Draw(currentAnimation.CurrentImage, transform.Position.x, transform.Position.y, flipX, false);
+        }
+
         private void CheckCollisionsEnemies()
         {
-            for (int i = 0; i < GameManager.Instance.LevelController.EnemyList.Count; i++)
+            foreach (var enemy in GameManager.Instance.LevelController.EnemyList)
             {
-                Enemy enemy = GameManager.Instance.LevelController.EnemyList[i];
-
                 float DistanceX = Math.Abs((enemy.Transform.Position.x + enemy.Transform.Scale.x / 2) - (transform.Position.x + transform.Scale.x / 2));
                 float DistanceY = Math.Abs((enemy.Transform.Position.y + enemy.Transform.Scale.y / 2) - (transform.Position.y + transform.Scale.y / 2));
 
@@ -67,12 +81,11 @@ namespace MyGame
                 }
             }
         }
+
         private void CheckCollisionsBarrels()
         {
-            for (int i = 0; i < GameManager.Instance.LevelController.BarrelList.Count; i++)
+            foreach (var barrel in GameManager.Instance.LevelController.BarrelList)
             {
-                Barrel barrel = GameManager.Instance.LevelController.BarrelList[i];
-
                 float DistanceX = Math.Abs((barrel.Transform.Position.x + barrel.Transform.Scale.x / 2) - (transform.Position.x + transform.Scale.x / 2));
                 float DistanceY = Math.Abs((barrel.Transform.Position.y + barrel.Transform.Scale.y / 2) - (transform.Position.y + transform.Scale.y / 2));
 
@@ -84,46 +97,24 @@ namespace MyGame
                     float overlapX = sumHalfWidth - DistanceX;
                     float overlapY = sumHalfHeight - DistanceY;
 
-                    // Corregir la posición del personaje dependiendo de la colisión
                     if (overlapX < overlapY)
                     {
-                        // Si la colisión es más horizontal, corregir la posición en el eje X
                         if (transform.Position.x < barrel.Transform.Position.x)
-                        {
-                            // Ajusta la posición en X para no atravesar el barril
                             transform.Position = new Vector2(transform.Position.x - overlapX, transform.Position.y);
-                        }
                         else
-                        {
-                            // Ajusta la posición en X para no atravesar el barril
                             transform.Position = new Vector2(transform.Position.x + overlapX, transform.Position.y);
-                        }
                     }
                     else
                     {
-                        // Si la colisión es más vertical, corregir la posición en el eje Y
                         if (transform.Position.y < barrel.Transform.Position.y)
-                        {
-                            // Ajusta la posición en Y para no atravesar el barril
                             transform.Position = new Vector2(transform.Position.x, transform.Position.y - overlapY);
-                        }
                         else
-                        {
-                            // Ajusta la posición en Y para no atravesar el barril
                             transform.Position = new Vector2(transform.Position.x, transform.Position.y + overlapY);
-                        }
                     }
 
-                    // Este paso asegura que el personaje no sigue moviéndose dentro del barril
-                    // Por lo tanto, si ya corregiste la posición en uno de los ejes, no se moverá más allá.
                     break;
                 }
             }
-        }
-
-        public void Render()
-        {
-            Engine.Draw(currentAnimation.CurrentImage, transform.Position.x, transform.Position.y);
         }
 
         public void GetDamage(int damage)

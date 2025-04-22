@@ -13,6 +13,7 @@ namespace MyGame
         private EnemyMovement enemyMovement;
         private Transform transform;
         private Animation currentAnimation;
+        private float speed = 1.5f;
 
         private int health = 100;
 
@@ -72,5 +73,34 @@ namespace MyGame
                    bulletY + bulletRadius > transform.Position.y && bulletY - bulletRadius < transform.Position.y + transform.Size.y;
         }
 
+        private class EnemyMovement
+        {
+            private Transform transform;
+            private float speed = 1.5f;
+            private float detectionRange = 500f;
+
+            public EnemyMovement(Transform transform)
+            {
+                this.transform = transform;
+            }
+
+            public void Update()
+            {
+                Player player = GameManager.Instance.LevelController.Player1;
+
+                Vector2 direction = player.Transform.Position - transform.Position;
+
+                float distance = (float)Math.Sqrt(direction.x * direction.x + direction.y * direction.y);
+
+                if (distance <= detectionRange && distance > 1f)
+                {
+                    direction.x /= distance;
+                    direction.y /= distance;
+
+                    transform.Translate(direction, speed);
+                }
+            }
+
+        }
     }
 }

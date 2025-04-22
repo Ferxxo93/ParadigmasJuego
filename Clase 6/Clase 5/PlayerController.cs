@@ -1,69 +1,81 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyGame
 {
     public class PlayerController
     {
         private DateTime timeLastShoot;
-        private float timebetweetShoot = 0.4f;
+        private float timeBetweenShoot = 0.4f;
         private int speed = 5;
 
-        private Transform tranform;
+        private Transform transform;
         private Vector2 shootDirection = new Vector2(0, -1);
 
-        public PlayerController(Transform transform)
+        private Player player;
+
+        public PlayerController(Transform transform, Player player)
         {
-            this.tranform = transform;
+            this.transform = transform;
+            this.player = player;
         }
 
         public void Update()
         {
+            bool movedLeft = false;
+            bool movedRight = false;
+            bool movedUp = false;
+            bool movedDown = false;
+
             if (Engine.GetKey(Engine.KEY_A))
             {
-                tranform.Translate(new Vector2(-1,0), speed);
+                transform.Translate(new Vector2(-1, 0), speed);
                 shootDirection = new Vector2(-1, 0);
+                movedLeft = true;
             }
 
             if (Engine.GetKey(Engine.KEY_D))
             {
-                tranform.Translate(new Vector2(1, 0), speed);
+                transform.Translate(new Vector2(1, 0), speed);
                 shootDirection = new Vector2(1, 0);
+                movedRight = true;
             }
 
             if (Engine.GetKey(Engine.KEY_W))
             {
-                tranform.Translate(new Vector2(0,-1), speed);
+                transform.Translate(new Vector2(0, -1), speed);
                 shootDirection = new Vector2(0, -1);
-
+                movedUp = true;
             }
 
             if (Engine.GetKey(Engine.KEY_S))
             {
-                tranform.Translate(new Vector2(0, 1), speed);
+                transform.Translate(new Vector2(0, 1), speed);
                 shootDirection = new Vector2(0, 1);
+                movedDown = true;
             }
-            if (Engine.GetKey(Engine.KEY_K))
-            {
-                Shoot();
 
-            }
+            // Flip visual solo para izquierda/derecha
+            if (movedLeft)
+                player.SetFlip(true);
+            else if (movedRight)
+                player.SetFlip(false);
+
+            // Marcar si se está moviendo verticalmente (por si querés usarlo visualmente)
+            player.SetVerticalDirection(movedUp, movedDown);
+
+            if (Engine.GetKey(Engine.KEY_K))
+                Shoot();
         }
+
         private void Shoot()
         {
-            if ((DateTime.Now - timeLastShoot).TotalSeconds > timebetweetShoot)
+            if ((DateTime.Now - timeLastShoot).TotalSeconds > timeBetweenShoot)
             {
-                float startX = tranform.Position.x + tranform.Scale.x / 2;
-                float startY = tranform.Position.y;
+                float startX = transform.Position.x;
+                float startY = transform.Position.y;
                 GameManager.Instance.LevelController.AddBullet(startX, startY, shootDirection.x, shootDirection.y);
                 timeLastShoot = DateTime.Now;
             }
-
         }
-
-
     }
 }

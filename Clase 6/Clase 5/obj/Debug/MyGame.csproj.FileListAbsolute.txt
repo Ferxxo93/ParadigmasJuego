@@ -244,3 +244,10 @@ C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\obj\
 C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\obj\Debug\MyGame.csproj.Up2Date
 C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\obj\Debug\MyGame.exe
 C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\obj\Debug\MyGame.pdb
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Enemy\Idle\4.png
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Player\Move\up\0.PNG
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Player\Move\up\1.PNG
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Player\Move\up\2.PNG
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Player\Move\up\3.PNG
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Player\Move\up\4.PNG
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Player\Move\up\5.PNG

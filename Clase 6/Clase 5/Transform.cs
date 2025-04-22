@@ -34,7 +34,7 @@ namespace MyGame
             this.scale = scale;
         }
 
-        public void Translate(Vector2 direction, int speed)
+        public void Translate(Vector2 direction, float speed)
         {
             position.x += direction.x * speed;
             position.y += direction.y * speed;

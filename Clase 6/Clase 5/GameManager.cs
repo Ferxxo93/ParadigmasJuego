@@ -23,6 +23,7 @@ namespace MyGame
         private LevelController levelController;
 
         public LevelController LevelController => levelController;
+        public Player Player => LevelController.Player1;
 
         public static GameManager Instance
         {

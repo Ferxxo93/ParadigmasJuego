@@ -20,6 +20,7 @@ namespace MyGame
          public List<Enemy> EnemyList => enemyList;
          public List<Bullet> BulletList => bulletList;
          public List<Barrel> BarrelList => barrelList;
+         public Player Player1 => player1;
 
         public LevelController()
         {
