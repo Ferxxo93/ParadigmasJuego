@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    public class Barrel
+    public class Barrel : GameObject
     {
-        public Transform Transform;
         private static Image barrelImage = Engine.LoadImage("assets/barrel.png");
 
-        public Barrel(float posX, float posY)
-        {
-            Transform = new Transform(new Vector2(posX, posY), new Vector2(30, 22));
-        }
-
-        public void Update()
+        public Barrel(float posX, float posY) : base(posX, posY, new Vector2(30, 22))
         {
         }
 
-        public void Render()
+        public override void Update()
+        {
+        }
+
+        public override void Render()
         {
             Engine.Draw(barrelImage, Transform.Position.x, Transform.Position.y);
         }
-
     }
 }
 

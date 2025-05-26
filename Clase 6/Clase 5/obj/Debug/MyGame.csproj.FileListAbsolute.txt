@@ -260,3 +260,4 @@ C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\De
 C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Player\Move\up\5.PNG
 C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Punto.png
 C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\Punto.png
+C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\obj\Debug\MyGame.exe.config

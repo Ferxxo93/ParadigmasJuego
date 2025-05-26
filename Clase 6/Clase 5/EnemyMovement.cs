@@ -1,33 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyGame;
+using System;
 
-namespace MyGame
+public class EnemyMovement
 {
-    public class EnemyMovement
+    private Transform transform;
+    private float speed = 1.5f;
+    private float detectionRange = 500f;
+
+    public EnemyMovement(Transform transform)
     {
-        private Transform transform;
-        private int speed = 2;
+        this.transform = transform;
+    }
 
-        public EnemyMovement(Transform transform)
-        { 
-            this.transform = transform;
-        }
+    public void Update()
+    {
+        Player player = GameManager.Instance.LevelController.Player1;
+        if (player == null) return; // Prevención de errores si el jugador no está inicializado
 
-        public void Update()
+        Vector2 direction = player.Transform.Position - transform.Position;
+        float distance = (float)Math.Sqrt(direction.x * direction.x + direction.y * direction.y);
+
+        Console.WriteLine($"Distancia al jugador: {distance}"); // Depuración
+
+        // Eliminamos el filtro de distancia mínima para asegurar que el enemigo se mueva
+        if (distance <= detectionRange)
         {
-            transform.Translate(new Vector2(1,0), speed);
+            direction.x /= distance;
+            direction.y /= distance;
 
-            if (transform.Position.x > 1024 - 100 || transform.Position.x < 0)
-            {
-                speed = speed * -1;
-            }
+            transform.Translate(direction, speed);
         }
-
-
-
     }
 }
