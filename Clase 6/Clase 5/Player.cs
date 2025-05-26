@@ -14,6 +14,8 @@ namespace MyGame
         private bool flipX = false;
         private bool movingUp = false;
         private bool movingDown = false;
+        private bool isInvincible = false;
+        private float invincibilityTimer = 0f;
 
         public Player(float positionX, float positionY) : base(positionX, positionY, new Vector2(30, 55))
         {
@@ -42,6 +44,15 @@ namespace MyGame
             currentAnimation.Update();
             CheckCollisionsBarrels(); // Ahora está definido correctamente
             CheckCollisionsEnemies();
+
+            if (isInvincible)
+            {
+                invincibilityTimer -= Time.DeltaTime;
+                if (invincibilityTimer <= 0)
+                {
+                    isInvincible = false;
+                }
+            }
         }
 
         public override void Render()
@@ -68,6 +79,8 @@ namespace MyGame
 
         public void GetDamage(int damage)
         {
+            if (isInvincible) return;
+
             health -= damage;
             if (health <= 0)
             {
@@ -86,6 +99,33 @@ namespace MyGame
             movingUp = up;
             movingDown = down;
         }
+
+        public void ActivateFastShoot(float duration)
+        {
+            playerController.ModifyFireRate(0.2f, duration);
+        }
+
+        public void ActivateInvincibility(float duration)
+        {
+            isInvincible = true;
+            invincibilityTimer = duration;
+        }
+        public void SetInvincible(float seconds)
+        {
+            isInvincible = true;
+            invincibilityTimer = seconds;
+        }
+
+        public void ActivateBomb()
+        {
+            GameManager.Instance.LevelController.ClearAllEnemies();
+        }
+
+        public void SetFireRateMultiplier(float multiplier)
+        {
+            playerController.SetFireRateMultiplier(multiplier);
+        }
+
 
         private void CheckCollisionsBarrels()
         {

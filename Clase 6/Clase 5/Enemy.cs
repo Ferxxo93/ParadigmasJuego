@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyGame;
 
 namespace MyGame
 {
@@ -12,6 +13,7 @@ namespace MyGame
         private Animation currentAnimation;
         private int health = 100;
         private EnemyMovement enemyMovement;
+        private static Random random = new Random();
 
         public Enemy(float positionX, float positionY) : base(positionX, positionY, new Vector2(30, 22))
         {
@@ -50,6 +52,15 @@ namespace MyGame
             if (health <= 0)
             {
                 GameManager.Instance.LevelController.EnemyList.Remove(this);
+            }
+
+            if (random.NextDouble() < 0.3) // 30% de probabilidad
+            {
+                var values = Enum.GetValues(typeof(PowerUpType));
+                PowerUpType randomType = (PowerUpType)values.GetValue(random.Next(values.Length));
+                IPowerUp powerUp = PowerUpFactory.CreatePowerUp(randomType);
+                powerUp.SetPosition(this.Transform.Position.x, this.Transform.Position.y);
+                GameManager.Instance.LevelController.SpawnPowerUp(Transform.Position.x, Transform.Position.y);
             }
         }
 

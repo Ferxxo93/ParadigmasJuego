@@ -23,7 +23,6 @@ namespace MyGame
 
         private float winTimeSeconds = 15f; 
         private float gameStartTime = 0f;
-
         public LevelController LevelController => levelController;
         public Player Player => LevelController.Player1;
 
@@ -129,6 +128,7 @@ namespace MyGame
             }
         }
 
+       
         public void ChangeGameStatus(gameStatus status)
         {
             gameStage = status;

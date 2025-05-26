@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using MyGame;
 
 namespace MyGame
 {
@@ -16,8 +17,9 @@ namespace MyGame
         private Image fondo = Engine.LoadImage("assets/fondo.png");
         static private EnemySpawner enemySpawner;
         private Player player1;
+        public List<PowerUp> PowerUpList = new List<PowerUp>();
 
-         public List<Enemy> EnemyList => enemyList;
+        public List<Enemy> EnemyList => enemyList;
          public List<Bullet> BulletList => bulletList;
          public List<Barrel> BarrelList => barrelList;
          public Player Player1 => player1;
@@ -31,6 +33,7 @@ namespace MyGame
         {
             enemySpawner = new EnemySpawner();
             player1 = new Player(200, 200);
+            
 
             barrelList.Add(new Barrel(300, 250));
             barrelList.Add(new Barrel(330, 250));
@@ -51,6 +54,12 @@ namespace MyGame
 
         }
 
+        public void AddBullet(float x, float y, float dirX, float dirY)
+        {
+            Bullet bullet = new Bullet(x, y, dirX, dirY);
+            bulletList.Add(bullet);
+        }
+
         public bool AllEnemiesEliminated()
         {
             return enemyList.Count == 0;
@@ -59,6 +68,12 @@ namespace MyGame
         {
             player1.Update();
             enemySpawner.Update();
+
+            foreach (var powerUp in PowerUpList)
+            {
+                powerUp.Update(GameManager.Instance.Player);
+            }
+
             // Actualizar enemigos
             for (int i = 0; i < enemyList.Count; i++)
             {
@@ -95,6 +110,11 @@ namespace MyGame
             Engine.Draw(fondo, 0, 0);
             player1.Render();
 
+            foreach (var powerUp in PowerUpList)
+            {
+                powerUp.Render();
+            }
+
             for (int i = 0; i < enemyList.Count; i++)
             {
                 enemyList[i].Render();
@@ -112,10 +132,15 @@ namespace MyGame
             Engine.Show();
         }
 
-         public void AddBullet(float posX, float posY, float dirX, float dirY)
+        public void SpawnPowerUp(float x, float y)
         {
-            bulletList.Add(new Bullet(posX, posY, dirX, dirY));
+            IPowerUp powerUpLogic = PowerUpFactory.CreateRandomPowerUp();
+            PowerUp powerUp = new PowerUp(x, y, powerUpLogic);
+            PowerUpList.Add(powerUp);
         }
-
+        public void ClearAllEnemies()
+        {
+            EnemyList.Clear();
+        }
     }
 }
