@@ -33,10 +33,26 @@ public class LevelController
         // Se suscribe al evento de eliminación de enemigos
         GameManager.Instance.OnEnemyDestroyed += RemoveEnemy;
 
-        // Se crean algunos barriles de ejemplo
+        
         barrelList.Add(new Barrel(300, 250));
         barrelList.Add(new Barrel(330, 250));
         barrelList.Add(new Barrel(330, 275));
+        barrelList.Add(new Barrel(300, 275));
+
+        barrelList.Add(new Barrel(600, 250));
+        barrelList.Add(new Barrel(630, 250));
+        barrelList.Add(new Barrel(630, 275));
+        barrelList.Add(new Barrel(600, 275));
+
+        barrelList.Add(new Barrel(300, 500));
+        barrelList.Add(new Barrel(330, 500));
+        barrelList.Add(new Barrel(330, 530));
+        barrelList.Add(new Barrel(300, 530));
+
+        barrelList.Add(new Barrel(600, 500));
+        barrelList.Add(new Barrel(630, 500));
+        barrelList.Add(new Barrel(630, 530));
+        barrelList.Add(new Barrel(600, 530));
     }
 
     private void RemoveEnemy(Enemy enemy)
@@ -49,21 +65,16 @@ public class LevelController
         player1.Update();
         enemySpawner.Update(); // Esto se encarga de spawnear enemigos
 
-        // Sincronizamos la lista de enemigos (asumiendo que EnemySpawner agrega a GameManager.Instance.LevelController.EnemyList)
-        // O, alternativamente, el EnemySpawner podría agregar directamente a "enemyList"; ajusta según tu implementación.
-        // Para este ejemplo, asumiremos que enemySpawner agrega directamente a "enemyList".
-        // Si no fuese el caso, podrías hacer: enemyList = GameManager.Instance.LevelController.EnemyList;
-
         foreach (var enemy in enemyList)
             enemy.Update();
 
-        // Actualizamos las balas activas y revisamos colisiones con enemigos
+        // Actualiza las balas activas y revisamos colisiones con enemigos
         for (int i = activeBulletList.Count - 1; i >= 0; i--)
         {
             Bullet bullet = activeBulletList[i];
             bullet.Update();
 
-            // Si la bala sale de pantalla, la desactivamos y la regresamos al pool
+            // Si la bala sale de pantalla, la desactiva y la regresa al pool
             if (bullet.IsOffScreen(screenWidth, screenHeight))
             {
                 bullet.Deactivate();
@@ -72,12 +83,12 @@ public class LevelController
             }
             else
             {
-                // Revisamos colisión con cada enemigo
+                // Revisa colisión con cada enemigo
                 foreach (var enemy in enemyList)
                 {
                     if (enemy.CheckCollision(bullet))
                     {
-                        enemy.GetDamage(50); // Aplica un daño arbitrario
+                        enemy.GetDamage(50);
                         bullet.Deactivate();
                         bulletPool.ReturnObject(bullet);
                         activeBulletList.RemoveAt(i);
@@ -109,7 +120,7 @@ public class LevelController
         Engine.Show();
     }
 
-    // Método público para disparar una bala, el cual usa el pool
+   
     public void AddBullet(float posX, float posY, float dirX, float dirY)
     {
         SpawnBullet(posX, posY, dirX, dirY);

@@ -10,7 +10,7 @@ namespace MyGame
     {
         private static Image barrelImage = Engine.LoadImage("assets/barrel.png");
 
-        // Evento para notificar cuando el barril es destruido
+        // Evento para notificar cuando el barril es destruido a futuro
         public event Action<Barrel> OnBarrelDestroyed;
 
         public Barrel(float posX, float posY) : base(posX, posY, new Vector2(30, 22))

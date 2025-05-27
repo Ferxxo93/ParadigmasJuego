@@ -44,7 +44,6 @@ namespace MyGame
             Engine.Draw(currentAnimation.CurrentImage, Transform.Position.x, Transform.Position.y);
         }
 
-        // Se comprueba la colisión con una bala utilizando las posiciones y el tamaño
         public bool CheckCollision(Bullet bullet)
         {
             float bulletX = bullet.Transform.Position.x;

@@ -65,7 +65,7 @@ namespace MyGame
                 if (DistanceX < sumHalfWidth && DistanceY < sumHalfHeight)
                 {
                     GameManager.Instance.ChangeGameStatus(gameStatus.lose);
-                    NotifyPlayerDestroyed(); // Activamos el evento cuando el jugador pierde
+                    NotifyPlayerDestroyed(); // Activa el evento cuando el jugador pierde
                 }
             }
         }
@@ -77,7 +77,7 @@ namespace MyGame
             {
                 isDead = true;
                 GameManager.Instance.ChangeGameStatus(gameStatus.lose);
-                NotifyPlayerDestroyed(); // Activamos el evento cuando el jugador muere
+                NotifyPlayerDestroyed(); // Activa el evento cuando el jugador muere
             }
         }
 
