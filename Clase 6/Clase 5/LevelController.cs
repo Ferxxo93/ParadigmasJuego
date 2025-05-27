@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyGame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -7,9 +8,24 @@ using System.Threading;
 using System.Threading.Tasks;
 using MyGame;
 
-namespace MyGame
+public class LevelController
 {
-    public class LevelController
+    private List<Enemy> enemyList = new List<Enemy>();
+    private List<Bullet> activeBulletList = new List<Bullet>();
+    private List<Barrel> barrelList = new List<Barrel>();
+    private Image fondo = Engine.LoadImage("assets/fondo.png");
+    private Player player1;
+    private EnemySpawner enemySpawner; // Se encarga de generar enemigos
+    private ObjectPool<Bullet> bulletPool; // Pool genérico para las balas
+    private int screenWidth = 800;
+    private int screenHeight = 600;
+
+    public List<Enemy> EnemyList => enemyList;
+    public List<Bullet> BulletList => activeBulletList;
+    public List<Barrel> BarrelList => barrelList;
+    public Player Player1 => player1;
+
+    public LevelController()
     {
         private List<Enemy> enemyList = new List<Enemy>();
         private List<Bullet> bulletList = new List<Bullet>();
@@ -23,11 +39,47 @@ namespace MyGame
          public List<Bullet> BulletList => bulletList;
          public List<Barrel> BarrelList => barrelList;
          public Player Player1 => player1;
+        InitializeLevel();
+    }
 
-        public LevelController()
+    public void InitializeLevel()
+    {
+        player1 = new Player(200, 200);
+        enemySpawner = new EnemySpawner();
+        bulletPool = new ObjectPool<Bullet>(() => new Bullet(), 20);
+
+        // Se suscribe al evento de eliminación de enemigos
+        GameManager.Instance.OnEnemyDestroyed += RemoveEnemy;
+
+        // Se crean algunos barriles de ejemplo
+        barrelList.Add(new Barrel(300, 250));
+        barrelList.Add(new Barrel(330, 250));
+        barrelList.Add(new Barrel(330, 275));
+    }
+
+    private void RemoveEnemy(Enemy enemy)
+    {
+        enemyList.Remove(enemy);
+    }
+
+    public void Update()
+    {
+        player1.Update();
+        enemySpawner.Update(); // Esto se encarga de spawnear enemigos
+
+        // Sincronizamos la lista de enemigos (asumiendo que EnemySpawner agrega a GameManager.Instance.LevelController.EnemyList)
+        // O, alternativamente, el EnemySpawner podría agregar directamente a "enemyList"; ajusta según tu implementación.
+        // Para este ejemplo, asumiremos que enemySpawner agrega directamente a "enemyList".
+        // Si no fuese el caso, podrías hacer: enemyList = GameManager.Instance.LevelController.EnemyList;
+
+        foreach (var enemy in enemyList)
+            enemy.Update();
+
+        // Actualizamos las balas activas y revisamos colisiones con enemigos
+        for (int i = activeBulletList.Count - 1; i >= 0; i--)
         {
-            InitializeLevel();
-        }
+            Bullet bullet = activeBulletList[i];
+            bullet.Update();
 
         public void InitializeLevel()
         {
@@ -76,16 +128,24 @@ namespace MyGame
 
             // Actualizar enemigos
             for (int i = 0; i < enemyList.Count; i++)
+            // Si la bala sale de pantalla, la desactivamos y la regresamos al pool
+            if (bullet.IsOffScreen(screenWidth, screenHeight))
             {
-                enemyList[i].Update();
-
-                // Eliminar enemigo si colisiona con una bala (ejemplo de eliminación)
-                for (int j = 0; j < bulletList.Count; j++)
+                bullet.Deactivate();
+                bulletPool.ReturnObject(bullet);
+                activeBulletList.RemoveAt(i);
+            }
+            else
+            {
+                // Revisamos colisión con cada enemigo
+                foreach (var enemy in enemyList)
                 {
-                    if (enemyList[i].CheckCollision(bulletList[j]))
+                    if (enemy.CheckCollision(bullet))
                     {
-                        enemyList[i].GetDamage(100); // aplicamos daño, el enemigo se elimina internamente si la vida llega a 0
-                        bulletList.RemoveAt(j);
+                        enemy.GetDamage(50); // Aplica un daño arbitrario
+                        bullet.Deactivate();
+                        bulletPool.ReturnObject(bullet);
+                        activeBulletList.RemoveAt(i);
                         break;
                     }
                 }
@@ -141,5 +201,40 @@ namespace MyGame
         {
             EnemyList.Clear();
         }
+        }
+
+        foreach (var barrel in barrelList)
+            barrel.Update();
+    }
+
+    public void Render()
+    {
+        Engine.Clear();
+        Engine.Draw(fondo, 0, 0);
+        player1.Render();
+
+        foreach (var enemy in enemyList)
+            enemy.Render();
+
+        foreach (var bullet in activeBulletList)
+            bullet.Render();
+
+        foreach (var barrel in barrelList)
+            barrel.Render();
+
+        Engine.Show();
+    }
+
+    // Método público para disparar una bala, el cual usa el pool
+    public void AddBullet(float posX, float posY, float dirX, float dirY)
+    {
+        SpawnBullet(posX, posY, dirX, dirY);
+    }
+
+    private void SpawnBullet(float posX, float posY, float dirX, float dirY)
+    {
+        Bullet bullet = bulletPool.GetObject();
+        bullet.Reset(posX, posY, dirX, dirY);
+        activeBulletList.Add(bullet);
     }
 }

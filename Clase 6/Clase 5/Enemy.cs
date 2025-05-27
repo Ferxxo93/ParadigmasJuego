@@ -70,8 +70,20 @@ namespace MyGame
             float bulletY = bullet.Transform.Position.y;
             float bulletRadius = bullet.Radius;
 
-            return bulletX + bulletRadius > Transform.Position.x && bulletX - bulletRadius < Transform.Position.x + Transform.Scale.x &&
-                   bulletY + bulletRadius > Transform.Position.y && bulletY - bulletRadius < Transform.Position.y + Transform.Scale.y;
+            return bulletX + bulletRadius > Transform.Position.x &&
+                   bulletX - bulletRadius < Transform.Position.x + Transform.Scale.x &&
+                   bulletY + bulletRadius > Transform.Position.y &&
+                   bulletY - bulletRadius < Transform.Position.y + Transform.Scale.y;
+        }
+
+        public void GetDamage(int damage)
+        {
+            health -= damage;
+            if (health <= 0)
+            {
+                // Se notifica la eliminación al GameManager
+                GameManager.Instance.NotifyEnemyDestroyed(this);
+            }
         }
 
         private void CheckCollisionsBarrels()

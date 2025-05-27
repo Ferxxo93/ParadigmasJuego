@@ -21,10 +21,13 @@ namespace MyGame
         private Image winScreen = Engine.LoadImage("assets/Win.png");
         private LevelController levelController;
 
-        private float winTimeSeconds = 15f; 
+        private float winTimeSeconds = 15f;
         private float gameStartTime = 0f;
         public LevelController LevelController => levelController;
         public Player Player => LevelController.Player1;
+
+        // Evento que notifica cuando un enemigo es eliminado
+        public event Action<Enemy> OnEnemyDestroyed;
 
         public static GameManager Instance
         {
@@ -41,6 +44,18 @@ namespace MyGame
         public void Initialize()
         {
             levelController = new LevelController();
+
+            // Suscribirse al evento para eliminar el enemigo del nivel
+            OnEnemyDestroyed += (enemy) =>
+            {
+                levelController.EnemyList.Remove(enemy);
+                Console.WriteLine($"Enemigo eliminado: {enemy}");
+            };
+        }
+
+        public void NotifyEnemyDestroyed(Enemy enemy)
+        {
+            OnEnemyDestroyed?.Invoke(enemy);
         }
 
         public void Update()
@@ -51,7 +66,7 @@ namespace MyGame
                     if (Engine.GetKey(Engine.KEY_ESP))
                     {
                         gameStage = gameStatus.game;
-                        gameStartTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds; // <<< marca el momento que empieza
+                        gameStartTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
                     }
                     break;
 
@@ -60,12 +75,6 @@ namespace MyGame
 
                     float currentTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
 
-                    // Ganar por eliminar enemigos
-                    /*if (levelController.AllEnemiesEliminated())
-                    {
-                        gameStage = gameStatus.win;
-                    }
-                    */
                     // Ganar por tiempo cumplido
                     if (currentTime - gameStartTime >= winTimeSeconds)
                     {
@@ -102,7 +111,7 @@ namespace MyGame
                     break;
             }
         }
-
+        
         public void Render()
         {
             switch (gameStage)
@@ -135,4 +144,3 @@ namespace MyGame
         }
     }
 }
-
