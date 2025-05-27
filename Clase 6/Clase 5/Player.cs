@@ -75,7 +75,8 @@ namespace MyGame
 
                 if (DistanceX < sumHalfWidth && DistanceY < sumHalfHeight)
                 {
-                    GetDamage(100);
+                    GameManager.Instance.ChangeGameStatus(gameStatus.lose);
+                    NotifyPlayerDestroyed();
                 }
             }
         }

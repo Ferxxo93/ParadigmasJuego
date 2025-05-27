@@ -51,7 +51,8 @@ namespace MyGame
             health -= damage;
             if (health <= 0)
             {
-                GameManager.Instance.LevelController.EnemyList.Remove(this);
+                // Se notifica la eliminación al GameManager
+                GameManager.Instance.NotifyEnemyDestroyed(this);
             }
 
             if (random.NextDouble() < 1) // 30% de probabilidad
@@ -74,16 +75,6 @@ namespace MyGame
                    bulletX - bulletRadius < Transform.Position.x + Transform.Scale.x &&
                    bulletY + bulletRadius > Transform.Position.y &&
                    bulletY - bulletRadius < Transform.Position.y + Transform.Scale.y;
-        }
-
-        public void GetDamage(int damage)
-        {
-            health -= damage;
-            if (health <= 0)
-            {
-                // Se notifica la eliminación al GameManager
-                GameManager.Instance.NotifyEnemyDestroyed(this);
-            }
         }
 
         private void CheckCollisionsBarrels()
