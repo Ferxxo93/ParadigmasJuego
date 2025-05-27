@@ -92,7 +92,7 @@ public class LevelController
                 {
                     if (enemy.CheckCollision(bullet))
                     {
-                        enemy.GetDamage(50);
+                        enemy.GetDamage(100);
                         bullet.Deactivate();
                         bulletPool.ReturnObject(bullet);
                         activeBulletList.RemoveAt(i);

@@ -90,7 +90,7 @@ namespace MyGame
             {
                 isDead = true;
                 GameManager.Instance.ChangeGameStatus(gameStatus.lose);
-                NotifyPlayerDestroyed(); // Activamos el evento cuando el jugador muere
+                NotifyPlayerDestroyed(); // Activa el evento cuando el jugador muere
             }
         }
 
