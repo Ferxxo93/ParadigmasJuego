@@ -112,7 +112,7 @@ namespace MyGame
                     break;
             }
         }
-
+        
         public void Render()
         {
             switch (gameStage)

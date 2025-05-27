@@ -20,12 +20,24 @@ namespace MyGame
 
         public T GetObject()
         {
-            return pool.Count > 0 ? pool.Pop() : factory();
+            if (pool.Count > 0)
+            {
+                T obj = pool.Pop();
+                Console.WriteLine($"[Pool] Se extrajo un objeto del pool. Objetos restantes: {pool.Count}");
+                return obj;
+            }
+            else
+            {
+                T newObj = factory();
+                Console.WriteLine("[Pool] Pool vacío. Se creó un nuevo objeto.");
+                return newObj;
+            }
         }
 
         public void ReturnObject(T obj)
         {
             pool.Push(obj);
+            Console.WriteLine($"[Pool] Objeto retornado al pool. Total en pool: {pool.Count}");
         }
     }
 }
