@@ -44,23 +44,27 @@ namespace MyGame
             Engine.Draw(currentAnimation.CurrentImage, Transform.Position.x, Transform.Position.y);
         }
 
-        public void GetDamage(int damage)
-        {
-            health -= damage;
-            if (health <= 0)
-            {
-                GameManager.Instance.LevelController.EnemyList.Remove(this);
-            }
-        }
-
+        // Se comprueba la colisión con una bala utilizando las posiciones y el tamaño
         public bool CheckCollision(Bullet bullet)
         {
             float bulletX = bullet.Transform.Position.x;
             float bulletY = bullet.Transform.Position.y;
             float bulletRadius = bullet.Radius;
 
-            return bulletX + bulletRadius > Transform.Position.x && bulletX - bulletRadius < Transform.Position.x + Transform.Scale.x &&
-                   bulletY + bulletRadius > Transform.Position.y && bulletY - bulletRadius < Transform.Position.y + Transform.Scale.y;
+            return bulletX + bulletRadius > Transform.Position.x &&
+                   bulletX - bulletRadius < Transform.Position.x + Transform.Scale.x &&
+                   bulletY + bulletRadius > Transform.Position.y &&
+                   bulletY - bulletRadius < Transform.Position.y + Transform.Scale.y;
+        }
+
+        public void GetDamage(int damage)
+        {
+            health -= damage;
+            if (health <= 0)
+            {
+                // Se notifica la eliminación al GameManager
+                GameManager.Instance.NotifyEnemyDestroyed(this);
+            }
         }
 
         private void CheckCollisionsBarrels()

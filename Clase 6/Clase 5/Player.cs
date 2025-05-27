@@ -15,6 +15,9 @@ namespace MyGame
         private bool movingUp = false;
         private bool movingDown = false;
 
+        // Evento para notificar cuando el jugador es destruido
+        public event Action<Player> OnPlayerDestroyed;
+
         public Player(float positionX, float positionY) : base(positionX, positionY, new Vector2(30, 55))
         {
             playerController = new PlayerController(Transform, this);
@@ -40,7 +43,7 @@ namespace MyGame
 
             playerController.Update();
             currentAnimation.Update();
-            CheckCollisionsBarrels(); // Ahora está definido correctamente
+            CheckCollisionsBarrels();
             CheckCollisionsEnemies();
         }
 
@@ -62,6 +65,7 @@ namespace MyGame
                 if (DistanceX < sumHalfWidth && DistanceY < sumHalfHeight)
                 {
                     GameManager.Instance.ChangeGameStatus(gameStatus.lose);
+                    NotifyPlayerDestroyed(); // Activamos el evento cuando el jugador pierde
                 }
             }
         }
@@ -73,6 +77,7 @@ namespace MyGame
             {
                 isDead = true;
                 GameManager.Instance.ChangeGameStatus(gameStatus.lose);
+                NotifyPlayerDestroyed(); // Activamos el evento cuando el jugador muere
             }
         }
 
@@ -117,6 +122,11 @@ namespace MyGame
                     break;
                 }
             }
+        }
+
+        private void NotifyPlayerDestroyed()
+        {
+            OnPlayerDestroyed?.Invoke(this);
         }
     }
 }

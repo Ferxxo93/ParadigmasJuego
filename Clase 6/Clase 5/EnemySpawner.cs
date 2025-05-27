@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,16 +12,31 @@ namespace MyGame
         private Random random = new Random();
         private float spawnInterval = 2f;
         private float lastSpawnTime = 0;
+        private int maxEnemies = 10; // Límite de enemigos simultáneos
+        private Stopwatch stopwatch = new Stopwatch();
 
         private int screenWidth = 800;
         private int screenHeight = 600;
 
+        public EnemySpawner()
+        {
+            stopwatch.Start();
+
+            // Suscribirse al evento de eliminación de enemigos
+            GameManager.Instance.OnEnemyDestroyed += HandleEnemyDestroyed;
+        }
+
         public void Update()
         {
-            if ((float)(DateTime.Now - Time.initialTime).TotalSeconds - lastSpawnTime > spawnInterval)
+            if (GameManager.Instance.LevelController.EnemyList.Count >= maxEnemies)
+                return; // No generar más enemigos si se alcanzó el límite
+
+            float currentTime = (float)stopwatch.Elapsed.TotalSeconds;
+
+            if (currentTime - lastSpawnTime > spawnInterval)
             {
                 SpawnEnemy();
-                lastSpawnTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
+                lastSpawnTime = currentTime;
             }
         }
 
@@ -33,25 +48,21 @@ namespace MyGame
 
             switch (side)
             {
-                case 0: // Top
-                    x = random.Next(0, screenWidth);
-                    y = -30;
-                    break;
-                case 1: // Bottom
-                    x = random.Next(0, screenWidth);
-                    y = screenHeight + 30;
-                    break;
-                case 2: // Left
-                    x = -30;
-                    y = random.Next(0, screenHeight);
-                    break;
-                case 3: // Right
-                    x = screenWidth + 30;
-                    y = random.Next(0, screenHeight);
-                    break;
+                case 0: x = random.Next(0, screenWidth); y = -30; break;
+                case 1: x = random.Next(0, screenWidth); y = screenHeight + 30; break;
+                case 2: x = -30; y = random.Next(0, screenHeight); break;
+                case 3: x = screenWidth + 30; y = random.Next(0, screenHeight); break;
             }
 
-            GameManager.Instance.LevelController.EnemyList.Add(new Enemy(x, y));
+            Enemy newEnemy = new Enemy(x, y);
+            GameManager.Instance.LevelController.EnemyList.Add(newEnemy);
+            Console.WriteLine($"Enemigo generado en ({x}, {y})");
+        }
+
+        private void HandleEnemyDestroyed(Enemy enemy)
+        {
+            Console.WriteLine($"Enemigo eliminado: {enemy}. Ajustando spawn.");
+            spawnInterval *= 0.95f; // Reducir ligeramente el intervalo de spawn para aumentar dificultad
         }
     }
 }
