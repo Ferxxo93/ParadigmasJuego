@@ -33,8 +33,8 @@ namespace MyGame
         {
             enemySpawner = new EnemySpawner();
             player1 = new Player(200, 200);
-            
 
+            PowerUpList.Add(new PowerUp(400, 400, PowerUpType.FastShoot));
             barrelList.Add(new Barrel(300, 250));
             barrelList.Add(new Barrel(330, 250));
             barrelList.Add(new Barrel(330, 275));
@@ -82,12 +82,11 @@ namespace MyGame
                 // Eliminar enemigo si colisiona con una bala (ejemplo de eliminación)
                 for (int j = 0; j < bulletList.Count; j++)
                 {
-                    if (enemyList[i].CheckCollision(bulletList[j])) // Verifica colisión entre enemigo y bala
+                    if (enemyList[i].CheckCollision(bulletList[j]))
                     {
-                        enemyList.RemoveAt(i); // Elimina el enemigo
-                        bulletList.RemoveAt(j); // Elimina la bala
-                        i--; // Ajusta el índice para no omitir elementos
-                        break; // Sale del bucle de balas una vez que el enemigo ha sido eliminado
+                        enemyList[i].GetDamage(100); // aplicamos daño, el enemigo se elimina internamente si la vida llega a 0
+                        bulletList.RemoveAt(j);
+                        break;
                     }
                 }
             }
@@ -134,8 +133,8 @@ namespace MyGame
 
         public void SpawnPowerUp(float x, float y)
         {
-            IPowerUp powerUpLogic = PowerUpFactory.CreateRandomPowerUp();
-            PowerUp powerUp = new PowerUp(x, y, powerUpLogic);
+            PowerUpType tipoAleatorio = PowerUpFactory.GetRandomPowerUpType();
+            PowerUp powerUp = new PowerUp(x, y, tipoAleatorio);
             PowerUpList.Add(powerUp);
         }
         public void ClearAllEnemies()

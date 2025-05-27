@@ -54,7 +54,7 @@ namespace MyGame
                 GameManager.Instance.LevelController.EnemyList.Remove(this);
             }
 
-            if (random.NextDouble() < 0.3) // 30% de probabilidad
+            if (random.NextDouble() < 1) // 30% de probabilidad
             {
                 var values = Enum.GetValues(typeof(PowerUpType));
                 PowerUpType randomType = (PowerUpType)values.GetValue(random.Next(values.Length));

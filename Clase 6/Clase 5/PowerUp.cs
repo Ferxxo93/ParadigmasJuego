@@ -1,6 +1,6 @@
-﻿using MyGame;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using MyGame;
 
 namespace MyGame
 {
@@ -18,10 +18,7 @@ namespace MyGame
             active = false;
         }
 
-        public void Update()
-        {
-            
-        }
+        public void Update() { }
 
         public void Render()
         {
@@ -34,69 +31,24 @@ namespace MyGame
             position = new Vector2(x, y);
         }
 
-        public Vector2 GetPosition()
-        {
-            return position;
-        }
-    }
-}
-
-public class InvincibilityPowerUp : IPowerUp
-    {
-    private Vector2 position;
-    private bool active = true;
-    private Image image = Engine.LoadImage("assets/powerups/shield.png");
-
-    public bool IsActive => active;
-
-    public void Apply(Player player)
-    {
-        player.SetInvincible(3.0f); // 3 segundos de invencibilidad
-        active = false;
+        public Vector2 GetPosition() => position;
     }
 
-    public void Update()
-    {
-        
-    }
-
-    public void Render()
-    {
-        if (active)
-            Engine.Draw(image, position.x, position.y);
-    }
-
-    public void SetPosition(float x, float y)
-    {
-        position = new Vector2(x, y);
-    }
-
-    public Vector2 GetPosition()
-    {
-        return position;
-    }
-}
-
-
-    public class BombPowerUp : IPowerUp
+    public class InvincibilityPowerUp : IPowerUp
     {
         private Vector2 position;
         private bool active = true;
-        private Image image = Engine.LoadImage("assets/powerups/bomb.png"); 
+        private Image image = Engine.LoadImage("assets/powerups/shield.png");
 
         public bool IsActive => active;
 
         public void Apply(Player player)
         {
-            // Limpia enemigos del mapa
-            GameManager.Instance.LevelController.ClearAllEnemies();
+            player.SetInvincible(3.0f); // 3 segundos de invencibilidad
             active = false;
         }
 
-        public void Update()
-        {
-            
-        }
+        public void Update() { }
 
         public void Render()
         {
@@ -109,12 +61,40 @@ public class InvincibilityPowerUp : IPowerUp
             position = new Vector2(x, y);
         }
 
-        public Vector2 GetPosition()
+        public Vector2 GetPosition() => position;
+    }
+
+    public class BombPowerUp : IPowerUp
+    {
+        private Vector2 position;
+        private bool active = true;
+        private Image image = Engine.LoadImage("assets/powerups/bomb.png");
+
+        public bool IsActive => active;
+
+        public void Apply(Player player)
         {
-            return position;
+            GameManager.Instance.LevelController.ClearAllEnemies();
+            active = false;
         }
 
-        public enum PowerUpType
+        public void Update() { }
+
+        public void Render()
+        {
+            if (active)
+                Engine.Draw(image, position.x, position.y);
+        }
+
+        public void SetPosition(float x, float y)
+        {
+            position = new Vector2(x, y);
+        }
+
+        public Vector2 GetPosition() => position;
+    }
+
+    public enum PowerUpType
     {
         FastShoot,
         Invincibility,
@@ -123,6 +103,12 @@ public class InvincibilityPowerUp : IPowerUp
 
     public static class PowerUpFactory
     {
+        public static PowerUpType GetRandomPowerUpType()
+        {
+            Array values = Enum.GetValues(typeof(PowerUpType));
+            Random random = new Random();
+            return (PowerUpType)values.GetValue(random.Next(values.Length));
+        }
         public static IPowerUp CreatePowerUp(PowerUpType type)
         {
             switch (type)
@@ -132,6 +118,13 @@ public class InvincibilityPowerUp : IPowerUp
                 case PowerUpType.Bomb: return new BombPowerUp();
                 default: throw new Exception("Unknown PowerUpType");
             }
+        }
+        public static IPowerUp CreateRandomPowerUp()
+        {
+            Array values = Enum.GetValues(typeof(PowerUpType));
+            Random rand = new Random();
+            PowerUpType randomType = (PowerUpType)values.GetValue(rand.Next(values.Length));
+            return CreatePowerUp(randomType);
         }
     }
 

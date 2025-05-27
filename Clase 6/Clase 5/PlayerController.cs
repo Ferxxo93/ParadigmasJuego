@@ -66,7 +66,7 @@ namespace MyGame
             else if (movedRight)
                 player.SetFlip(false);
 
-            // Marcar si se está moviendo verticalmente (por si querés usarlo visualmente)
+            // Marcar si se está moviendo verticalmente (por si querés usarlo visualmente)a
             player.SetVerticalDirection(movedUp, movedDown);
 
             if (Engine.GetKey(Engine.KEY_K))
@@ -75,7 +75,7 @@ namespace MyGame
 
         private void Shoot()
         {
-            if ((DateTime.Now - timeLastShoot).TotalSeconds > timeBetweenShoot/ fireRateMultiplier)
+            if ((DateTime.Now - timeLastShoot).TotalSeconds > timeBetweenShoot * fireRateMultiplier)
             {
                 float startX = transform.Position.x;
                 float startY = transform.Position.y;

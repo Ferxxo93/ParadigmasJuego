@@ -72,7 +72,7 @@ namespace MyGame
 
                 if (DistanceX < sumHalfWidth && DistanceY < sumHalfHeight)
                 {
-                    GameManager.Instance.ChangeGameStatus(gameStatus.lose);
+                    GetDamage(100);
                 }
             }
         }
