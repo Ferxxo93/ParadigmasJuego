@@ -266,3 +266,7 @@ C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\
 C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\powerups\fastshoot.png
 C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\powerups\shield.png
 C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\powerups\Invincibility.png
+C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\powerups\bomb.png
+C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\powerups\fastshoot.png
+C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\powerups\Invincibility.png
+C:\Users\ferna\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\powerups\shield.png

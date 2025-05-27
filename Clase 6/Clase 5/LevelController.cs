@@ -11,6 +11,7 @@ public class LevelController
     private List<Enemy> enemyList = new List<Enemy>();
     private List<Bullet> activeBulletList = new List<Bullet>();
     private List<Barrel> barrelList = new List<Barrel>();
+    private List<PowerUp> PowerUpList = new List<PowerUp>();
     private Image fondo = Engine.LoadImage("assets/fondo.png");
     private Player player1;
     private EnemySpawner enemySpawner; // Se encarga de generar enemigos
