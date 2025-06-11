@@ -3,19 +3,23 @@ using System.Collections.Generic;
 
 namespace MyGame
 {
-    public class Player : GameObject
+    public class Player : GameObject, IHealth
     {
         private Image playerImage = Engine.LoadImage("assets/Player.png");
         private PlayerController playerController;
-        private int health = 100;
+        private int maxHealth = 100;
+        private int currentHealth = 100;
         private Animation currentAnimation;
         private bool isDead = false;
+        private IShoot shooter;
 
         private bool flipX = false;
         private bool movingUp = false;
         private bool movingDown = false;
         private bool isInvincible = false;
         private float invincibilityTimer = 0f;
+        public int MaxHealth => maxHealth;
+        public int CurrentHealth => currentHealth;
 
         // Evento para notificar cuando el jugador es destruido
         public event Action<Player> OnPlayerDestroyed;
@@ -37,6 +41,11 @@ namespace MyGame
             }
 
             currentAnimation = new Animation("idle", 0.1f, images, true);
+        }
+
+        public void SetHealth(int value)
+        {
+            currentHealth = maxHealth;
         }
 
         public override void Update()
@@ -85,8 +94,8 @@ namespace MyGame
         {
             if (isInvincible) return;
 
-            health -= damage;
-            if (health <= 0)
+            currentHealth -= damage;
+            if (currentHealth <= 0)
             {
                 isDead = true;
                 GameManager.Instance.ChangeGameStatus(gameStatus.lose);
@@ -107,7 +116,7 @@ namespace MyGame
 
         public void ActivateFastShoot(float duration)
         {
-            playerController.ModifyFireRate(0.2f, duration);
+            shooter.ModifyFireRate(0.2f, duration);
         }
 
         public void ActivateInvincibility(float duration)

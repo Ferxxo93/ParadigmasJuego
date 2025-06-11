@@ -59,7 +59,9 @@
     <Compile Include="Engine\Image.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="IHealth.cs" />
     <Compile Include="IPowerUp.cs" />
+    <Compile Include="IShoot.cs" />
     <Compile Include="LevelController.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerController.cs" />
@@ -104,6 +106,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\fondo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\MainMenu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Player\Move\0.PNG">
@@ -188,9 +193,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\Win.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="assets\MainMenu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\player.png">

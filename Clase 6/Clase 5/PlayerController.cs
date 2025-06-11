@@ -4,7 +4,7 @@ using MyGame;
 
 namespace MyGame
 {
-    public class PlayerController
+    public class PlayerController : IShoot
     {
         private DateTime timeLastShoot;
         private float timeBetweenShoot = 0.4f;
@@ -73,7 +73,7 @@ namespace MyGame
                 Shoot();
         }
 
-        private void Shoot()
+        public void Shoot()
         {
             if ((DateTime.Now - timeLastShoot).TotalSeconds > timeBetweenShoot * fireRateMultiplier)
             {

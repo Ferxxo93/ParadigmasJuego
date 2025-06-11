@@ -7,13 +7,16 @@ using MyGame;
 
 namespace MyGame
 {
-    public class Enemy : GameObject
+    public class Enemy : GameObject, IHealth
     {
         private Image enemyImage = Engine.LoadImage("assets/enemy.png");
         private Animation currentAnimation;
-        private int health = 100;
+        private int maxHealth = 100;
+        private int currentHealth;
         private EnemyMovement enemyMovement;
         private static Random random = new Random();
+        public int MaxHealth => maxHealth;
+        public int CurrentHealth => currentHealth;
 
         public Enemy(float positionX, float positionY) : base(positionX, positionY, new Vector2(30, 22))
         {
@@ -46,10 +49,19 @@ namespace MyGame
             Engine.Draw(currentAnimation.CurrentImage, Transform.Position.x, Transform.Position.y);
         }
 
+        public void SetHealth(int value)
+        {
+            currentHealth = maxHealth;
+            if (currentHealth <= 0)
+            {
+                GameManager.Instance.NotifyEnemyDestroyed(this);
+            }
+        }
+
         public void GetDamage(int damage)
         {
-            health -= damage;
-            if (health <= 0)
+            currentHealth -= damage;
+            if (currentHealth <= 0)
             {
                 // Se notifica la eliminación al GameManager
                 GameManager.Instance.NotifyEnemyDestroyed(this);
