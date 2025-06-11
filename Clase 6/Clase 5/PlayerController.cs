@@ -6,7 +6,7 @@ namespace MyGame
     {
         private DateTime timeLastShoot;
         private float timeBetweenShoot = 0.4f;
-        private int speed = 5;
+        private int speed = 400;
 
         private Transform transform;
         private Vector2 shootDirection = new Vector2(0, -1);
@@ -30,28 +30,28 @@ namespace MyGame
 
             if (Engine.GetKey(Engine.KEY_A) && position.x > 0)
             {
-                transform.Translate(new Vector2(-1, 0), speed);
+                transform.Translate(new Vector2(-1, 0), speed * Time.DeltaTime);
                 shootDirection = new Vector2(-1, 0);
                 movedLeft = true;
             }
 
             if (Engine.GetKey(Engine.KEY_D) && position.x < 1000)
             {
-                transform.Translate(new Vector2(1, 0), speed);
+                transform.Translate(new Vector2(1, 0), speed * Time.DeltaTime);
                 shootDirection = new Vector2(1, 0);
                 movedRight = true;
             }
 
             if (Engine.GetKey(Engine.KEY_W) && position.y > 0)
             {
-                transform.Translate(new Vector2(0, -1), speed);
+                transform.Translate(new Vector2(0, -1), speed * Time.DeltaTime);
                 shootDirection = new Vector2(0, -1);
                 movedUp = true;
             }
 
             if (Engine.GetKey(Engine.KEY_S) && position.y < 710)
             {
-                transform.Translate(new Vector2(0, 1), speed);
+                transform.Translate(new Vector2(0, 1), speed * Time.DeltaTime);
                 shootDirection = new Vector2(0, 1);
                 movedDown = true;
             }
