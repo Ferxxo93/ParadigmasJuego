@@ -1,23 +1,20 @@
 ﻿using MyGame;
 using System;
 
-public class EnemyMovement
+public class BigEnemyMovement : EnemyMovement
 {
-    protected Transform transform;
-    private float speed = 1.5f;
-    protected float detectionRange = 500f;
+    private float slowSpeed = 0.8f; // Más lento que el speed original 1.5f
 
-    public EnemyMovement(Transform transform)
+    public BigEnemyMovement(Transform transform) : base(transform)
     {
-        this.transform = transform;
     }
 
-    public virtual void Update()
+    public override void Update()
     {
         Player player = GameManager.Instance.LevelController.Player1;
         if (player == null) return;
 
-        Vector2 direction = player.Transform.Position - transform.Position;
+        Vector2 direction = player.Transform.Position - base.transform.Position;
         float distance = (float)Math.Sqrt(direction.x * direction.x + direction.y * direction.y);
 
         if (distance <= detectionRange)
@@ -25,7 +22,7 @@ public class EnemyMovement
             direction.x /= distance;
             direction.y /= distance;
 
-            transform.Translate(direction, speed);
+            base.transform.Translate(direction, slowSpeed);
         }
     }
 }

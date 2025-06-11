@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="Barrels.cs" />
+    <Compile Include="BigEnemy.cs" />
+    <Compile Include="BigEnemyMovement.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="EnemyMovement.cs" />
@@ -82,6 +84,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\barrel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\BigEnemy\Idle\5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\BigEnemy\Idle\6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\BigEnemy\Idle\7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\BigEnemy\Idle\8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\BigEnemy\Idle\9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="assets\bullet.png">

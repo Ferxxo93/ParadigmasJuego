@@ -54,7 +54,18 @@ namespace MyGame
                 case 3: x = screenWidth + 30; y = random.Next(0, screenHeight); break;
             }
 
-            Enemy newEnemy = new Enemy(x, y);
+            Enemy newEnemy;
+            if (random.NextDouble() < 0.3)
+            {
+                newEnemy = new BigEnemy(x, y);
+                Console.WriteLine($"BigEnemy generado en ({x}, {y})");
+            }
+            else
+            {
+                newEnemy = new Enemy(x, y);
+                Console.WriteLine($"Enemy generado en ({x}, {y})");
+            }
+
             GameManager.Instance.LevelController.EnemyList.Add(newEnemy);
             Console.WriteLine($"Enemigo generado en ({x}, {y})");
         }

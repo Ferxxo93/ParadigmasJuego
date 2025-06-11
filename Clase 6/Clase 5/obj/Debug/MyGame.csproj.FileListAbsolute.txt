@@ -318,3 +318,8 @@ C:\Users\TGS PC N#1031\OneDrive\Escritorio\ParadigmasJuego\Clase 6\Clase 5\obj\D
 C:\Users\TGS PC N#1031\OneDrive\Escritorio\ParadigmasJuego\Clase 6\Clase 5\obj\Debug\MyGame.csproj.Up2Date
 C:\Users\TGS PC N#1031\OneDrive\Escritorio\ParadigmasJuego\Clase 6\Clase 5\obj\Debug\MyGame.exe
 C:\Users\TGS PC N#1031\OneDrive\Escritorio\ParadigmasJuego\Clase 6\Clase 5\obj\Debug\MyGame.pdb
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\BigEnemy\Idle\5.png
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\BigEnemy\Idle\6.png
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\BigEnemy\Idle\7.png
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\BigEnemy\Idle\8.png
+C:\Users\USUARIO\OneDrive\Documentos\GitHub\ParadigmasJuego\Clase 6\Clase 5\bin\Debug\assets\BigEnemy\Idle\9.png

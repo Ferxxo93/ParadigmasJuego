@@ -9,8 +9,8 @@ namespace MyGame
 {
     public class Enemy : GameObject, IHealth
     {
-        private Image enemyImage = Engine.LoadImage("assets/enemy.png");
-        private Animation currentAnimation;
+        protected Image enemyImage = Engine.LoadImage("assets/enemy.png");
+        protected Animation currentAnimation;
         private int maxHealth = 100;
         private int currentHealth;
         private EnemyMovement enemyMovement;
@@ -89,7 +89,7 @@ namespace MyGame
                    bulletY - bulletRadius < Transform.Position.y + Transform.Scale.y;
         }
 
-        private void CheckCollisionsBarrels()
+        protected void CheckCollisionsBarrels()
         {
             foreach (var barrel in GameManager.Instance.LevelController.BarrelList)
             {
