@@ -8,7 +8,7 @@ namespace MyGame
     public class BigEnemy : Enemy, IHealth
     {
         private BigEnemyMovement bigEnemyMovement;
-        private static readonly Vector2 BigEnemySize = new Vector2(60, 44); 
+        private static readonly Vector2 BigEnemySize = new Vector2(60, 44);
         public BigEnemy(float positionX, float positionY) : base(positionX, positionY)
         {
             Transform.Size = BigEnemySize;
@@ -40,6 +40,5 @@ namespace MyGame
         {
             Engine.Draw(currentAnimation.CurrentImage, Transform.Position.x, Transform.Position.y);
         }
-
     }
 }
