@@ -1,73 +1,73 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\",
+  "WorkspaceRootPath": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\ferna\\onedrive\\documentos\\github\\paradigmasjuego\\clase 6\\clase 5\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\engine\\font.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:engine\\font.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\engine\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:engine\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\ishoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:ishoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\ihealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:ihealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\bigenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:bigenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\bigenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:bigenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|c:\\users\\usuario\\onedrive\\documentos\\github\\paradigmasjuego\\clase 6\\clase 5\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\engine\\font.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:engine\\font.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\engine\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:engine\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\ishoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:ishoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\ihealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:ihealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\bigenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:bigenemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\bigenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:bigenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CDCD5DC-5145-4C37-ACEA-CE81D939F89E}|MyGame.csproj|solutionrelative:properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -81,15 +81,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "EnemySpawner.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemySpawner.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "EnemySpawner.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemySpawner.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemySpawner.cs",
               "RelativeToolTip": "EnemySpawner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -97,11 +97,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "BigEnemyMovement.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemyMovement.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemyMovement.cs",
               "RelativeDocumentMoniker": "BigEnemyMovement.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemyMovement.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemyMovement.cs",
               "RelativeToolTip": "BigEnemyMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -109,11 +109,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "BigEnemy.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemy.cs",
               "RelativeDocumentMoniker": "BigEnemy.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemy.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\BigEnemy.cs",
               "RelativeToolTip": "BigEnemy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -121,11 +121,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "EnemyMovement.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemyMovement.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemyMovement.cs",
               "RelativeDocumentMoniker": "EnemyMovement.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemyMovement.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\EnemyMovement.cs",
               "RelativeToolTip": "EnemyMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -133,11 +133,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "IHealth.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IHealth.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IHealth.cs",
               "RelativeDocumentMoniker": "IHealth.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IHealth.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IHealth.cs",
               "RelativeToolTip": "IHealth.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -145,11 +145,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "LevelController.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\LevelController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\LevelController.cs",
               "RelativeDocumentMoniker": "LevelController.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\LevelController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\LevelController.cs",
               "RelativeToolTip": "LevelController.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAwHcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -157,35 +157,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Player.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Player.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAQwBEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAcwEkAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T22:04:59.171Z"
+              "WhenOpened": "2025-03-18T22:04:59.171Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\PlayerController.cs",
               "RelativeDocumentMoniker": "PlayerController.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\PlayerController.cs",
               "RelativeToolTip": "PlayerController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwEsAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAUwIIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T22:26:01.817Z"
+              "WhenOpened": "2025-04-01T22:26:01.817Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Enemy.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -195,9 +197,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Program.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -205,13 +207,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\GameManager.cs",
               "RelativeDocumentMoniker": "GameManager.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\GameManager.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\GameManager.cs",
               "RelativeToolTip": "GameManager.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAwwDgAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T22:30:04.986Z",
               "EditorCaption": ""
@@ -220,9 +222,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "Transform.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Transform.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Transform.cs",
               "RelativeDocumentMoniker": "Transform.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Transform.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Transform.cs",
               "RelativeToolTip": "Transform.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -230,11 +232,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "IShoot.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IShoot.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IShoot.cs",
               "RelativeDocumentMoniker": "IShoot.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IShoot.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\IShoot.cs",
               "RelativeToolTip": "IShoot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -242,16 +244,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Engine.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Engine.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Engine.cs",
               "RelativeDocumentMoniker": "Engine\\Engine.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Engine.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Engine.cs",
               "RelativeToolTip": "Engine\\Engine.cs",
               "ViewState": "AgIAAH0AAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:56.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T16:53:56.619Z"
             },
             {
               "$type": "Document",
@@ -266,24 +267,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Sound.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Sound.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Sound.cs",
               "RelativeDocumentMoniker": "Engine\\Sound.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Sound.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Sound.cs",
               "RelativeToolTip": "Engine\\Sound.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:56.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T16:53:56.617Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Properties\\AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Properties\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "Properties\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Properties\\AssemblyInfo.cs",
               "RelativeToolTip": "Properties\\AssemblyInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -291,16 +291,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Font.cs",
-              "DocumentMoniker": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Font.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Font.cs",
               "RelativeDocumentMoniker": "Engine\\Font.cs",
-              "ToolTip": "C:\\Users\\ferna\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Font.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\OneDrive\\Documentos\\GitHub\\ParadigmasJuego\\Clase 6\\Clase 5\\Engine\\Font.cs",
               "RelativeToolTip": "Engine\\Font.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T16:53:56.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T16:53:56.619Z"
             }
           ]
         }

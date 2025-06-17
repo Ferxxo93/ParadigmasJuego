@@ -21,7 +21,7 @@ namespace MyGame
         private Image winScreen = Engine.LoadImage("assets/Win.png");
         private LevelController levelController;
 
-        private float winTimeSeconds = 10f;
+        private float winTimeSeconds = 20f;
         private float gameStartTime = 0f;
         public LevelController LevelController => levelController;
         public Player Player => LevelController.Player1;

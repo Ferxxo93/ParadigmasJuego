@@ -16,7 +16,9 @@ namespace MyGame
         private Vector2 shootDirection = new Vector2(0, -1);
 
         private Player player;
-        
+
+        private Vector2 lastVelocity = new Vector2(0, 0); // 🔁 Dirección actual de movimiento
+
         public PlayerController(Transform transform, Player player)
         {
             this.transform = transform;
@@ -32,32 +34,45 @@ namespace MyGame
             Vector2 position = transform.Position;
             Vector2 scale = transform.Scale;
 
+            Vector2 input = new Vector2(0, 0); // Para calcular la dirección final
+
             if (Engine.GetKey(Engine.KEY_A) && position.x > 0)
             {
-                transform.Translate(new Vector2(-1, 0), speed * Time.DeltaTime);
+                input.x -= 1;
                 shootDirection = new Vector2(-1, 0);
                 movedLeft = true;
             }
 
             if (Engine.GetKey(Engine.KEY_D) && position.x < 1000)
             {
-                transform.Translate(new Vector2(1, 0), speed * Time.DeltaTime);
+                input.x += 1;
                 shootDirection = new Vector2(1, 0);
                 movedRight = true;
             }
 
             if (Engine.GetKey(Engine.KEY_W) && position.y > 0)
             {
-                transform.Translate(new Vector2(0, -1), speed * Time.DeltaTime);
+                input.y -= 1;
                 shootDirection = new Vector2(0, -1);
                 movedUp = true;
             }
 
             if (Engine.GetKey(Engine.KEY_S) && position.y < 710)
             {
-                transform.Translate(new Vector2(0, 1), speed * Time.DeltaTime);
+                input.y += 1;
                 shootDirection = new Vector2(0, 1);
                 movedDown = true;
+            }
+
+            if (input.x != 0 || input.y != 0)
+            {
+                input = Normalize(input);
+                transform.Translate(input, speed * Time.DeltaTime);
+                lastVelocity = input; // 🔁 Guardar la dirección actual
+            }
+            else
+            {
+                lastVelocity = new Vector2(0, 0); // 🔁 Detenido
             }
 
             // Flip visual solo para izquierda/derecha
@@ -66,7 +81,7 @@ namespace MyGame
             else if (movedRight)
                 player.SetFlip(false);
 
-            // Marcar si se está moviendo verticalmente (por si querés usarlo visualmente)a
+            // Marcar si se está moviendo verticalmente (por si querés usarlo visualmente)
             player.SetVerticalDirection(movedUp, movedDown);
 
             if (Engine.GetKey(Engine.KEY_K))
@@ -93,9 +108,23 @@ namespace MyGame
                 timeBetweenShoot = defaultFireRate;
             });
         }
+
         public void SetFireRateMultiplier(float multiplier)
         {
             fireRateMultiplier = multiplier;
+        }
+
+        // 🔁 Nuevo método para que Player pueda consultar dirección actual
+        public Vector2 GetVelocity()
+        {
+            return lastVelocity;
+        }
+
+        // 🔁 Normaliza vector (evita moverse más rápido en diagonal)
+        private Vector2 Normalize(Vector2 v)
+        {
+            float length = (float)Math.Sqrt(v.x * v.x + v.y * v.y);
+            return length == 0 ? new Vector2(0, 0) : new Vector2(v.x / length, v.y / length);
         }
     }
 }

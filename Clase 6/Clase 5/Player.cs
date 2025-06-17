@@ -30,17 +30,29 @@ namespace MyGame
             CreateAnimations();
         }
 
+        private Dictionary<string, Animation> animations = new Dictionary<string, Animation>();
+
         private void CreateAnimations()
+        {
+            animations["up"] = LoadAnimation("assets/Player/Up/");
+            animations["down"] = LoadAnimation("assets/Player/Down/");
+            animations["left"] = LoadAnimation("assets/Player/Left/");
+            animations["right"] = LoadAnimation("assets/Player/Right/");
+
+            currentAnimation = animations["down"]; // Animación inicial
+        }
+
+        private Animation LoadAnimation(string folderPath)
         {
             List<Image> images = new List<Image>();
 
             for (int i = 0; i < 5; i++)
             {
-                Image image = Engine.LoadImage($"assets/Player/Move/{i}.png");
+                Image image = Engine.LoadImage($"{folderPath}{i}.png");
                 images.Add(image);
             }
 
-            currentAnimation = new Animation("idle", 0.1f, images, true);
+            return new Animation("move", 0.1f, images, true);
         }
 
         public void SetHealth(int value)
@@ -53,6 +65,20 @@ namespace MyGame
             if (isDead) return;
 
             playerController.Update();
+
+            Vector2 velocity = playerController.GetVelocity();
+
+            if (Math.Abs(velocity.x) > Math.Abs(velocity.y))
+            {
+                if (velocity.x > 0) currentAnimation = animations["right"];
+                else if (velocity.x < 0) currentAnimation = animations["left"];
+            }
+            else if (Math.Abs(velocity.y) > 0)
+            {
+                if (velocity.y > 0) currentAnimation = animations["down"];
+                else if (velocity.y < 0) currentAnimation = animations["up"];
+            }
+
             currentAnimation.Update();
             CheckCollisionsBarrels();
             CheckCollisionsEnemies();
