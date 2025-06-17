@@ -21,10 +21,12 @@ namespace MyGame
         private Image winScreen = Engine.LoadImage("assets/Win.png");
         private LevelController levelController;
 
-        private float winTimeSeconds = 155f;
+        private float winTimeSeconds = 10f;
         private float gameStartTime = 0f;
         public LevelController LevelController => levelController;
         public Player Player => LevelController.Player1;
+
+        private Font font;
 
         // Evento que notifica cuando un enemigo es eliminado
         public event Action<Enemy> OnEnemyDestroyed;
@@ -51,6 +53,9 @@ namespace MyGame
                 levelController.EnemyList.Remove(enemy);
                 Console.WriteLine($"Enemigo eliminado: {enemy}");
             };
+
+            font = new Font("assets/OpenSans-Italic-VariableFont_wdth,wght.ttf", 24);
+
         }
 
         public void NotifyEnemyDestroyed(Enemy enemy)
@@ -111,7 +116,7 @@ namespace MyGame
                     break;
             }
         }
-        
+
         public void Render()
         {
             switch (gameStage)
@@ -121,14 +126,26 @@ namespace MyGame
                     Engine.Draw(mainMenu, 0, 0);
                     Engine.Show();
                     break;
+
                 case gameStatus.game:
                     levelController.Render();
+
+                    // Mostrar tiempo restante en HUD
+                    float currentTime = (float)(DateTime.Now - Time.initialTime).TotalSeconds;
+                    float remainingTime = Math.Max(0f, winTimeSeconds - (currentTime - gameStartTime));
+                    int seconds = (int)Math.Ceiling(remainingTime);
+                    Engine.DrawText("Tiempo restante: " + seconds + "s", 20, 20, 255, 255, 255, font.ReadPointer());
+
+
+                    Engine.Show();
                     break;
+
                 case gameStatus.win:
                     Engine.Clear();
                     Engine.Draw(winScreen, 0, 0);
                     Engine.Show();
                     break;
+
                 case gameStatus.lose:
                     Engine.Clear();
                     Engine.Draw(loseScreen, 0, 0);
@@ -137,7 +154,6 @@ namespace MyGame
             }
         }
 
-       
         public void ChangeGameStatus(gameStatus status)
         {
             gameStage = status;

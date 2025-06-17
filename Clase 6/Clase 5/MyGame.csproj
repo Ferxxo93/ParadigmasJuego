@@ -78,6 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="assets\OpenSans-Italic-VariableFont_wdth,wght.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="OpenSans-Italic-VariableFont_wdth,wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\Bullet\" />
