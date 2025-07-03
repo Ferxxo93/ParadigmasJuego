@@ -36,8 +36,8 @@ namespace MyGame
 
         public void Translate(Vector2 direction, float speed)
         {
-            position.x += direction.x * speed;
-            position.y += direction.y * speed;
+            position.x += direction.x * speed * Time.DeltaTime;
+            position.y += direction.y * speed * Time.DeltaTime;
         }
     }
 }
