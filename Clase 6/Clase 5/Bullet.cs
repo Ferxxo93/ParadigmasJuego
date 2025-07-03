@@ -13,7 +13,6 @@ namespace MyGame
         private float speed = 500f;
         private float radius = 5f;
         private Image bulletImage = Engine.LoadImage("assets/bullet.png");
-
         public bool Active { get; private set; }
 
         public Transform Transform => transform;

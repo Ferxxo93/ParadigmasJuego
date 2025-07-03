@@ -9,10 +9,12 @@ namespace MyGame
     {
         private BigEnemyMovement bigEnemyMovement;
         private static readonly Vector2 BigEnemySize = new Vector2(60, 44);
+        private CheckCollisionBarrels checkCollisionBarrels;
         public BigEnemy(float positionX, float positionY) : base(positionX, positionY)
         {
             Transform.Size = BigEnemySize;
             CreateAnimation();
+            checkCollisionBarrels = new CheckCollisionBarrels(Transform);
             bigEnemyMovement = new BigEnemyMovement(Transform);
         }
 
@@ -33,7 +35,7 @@ namespace MyGame
         {
             bigEnemyMovement.Update();
             base.currentAnimation.Update();
-            CheckCollisionsBarrels();
+            checkCollisionBarrels.CheckCollisionsBarrels();
         }
 
         public override void Render()

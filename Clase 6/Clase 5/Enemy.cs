@@ -15,12 +15,14 @@ namespace MyGame
         private int currentHealth;
         private EnemyMovement enemyMovement;
         private static Random random = new Random();
+        private CheckCollisionBarrels checkCollisionBarrels;
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;
 
         public Enemy(float positionX, float positionY) : base(positionX, positionY, new Vector2(30, 22))
         {
             enemyMovement = new EnemyMovement(Transform);
+            checkCollisionBarrels = new CheckCollisionBarrels(Transform);
             CreateAnimation();
         }
 
@@ -41,7 +43,7 @@ namespace MyGame
         {
             enemyMovement.Update();
             currentAnimation.Update();
-            CheckCollisionsBarrels();
+            checkCollisionBarrels.CheckCollisionsBarrels();
         }
 
         public override void Render()
@@ -89,36 +91,5 @@ namespace MyGame
                    bulletY - bulletRadius < Transform.Position.y + Transform.Scale.y;
         }
 
-        protected void CheckCollisionsBarrels()
-        {
-            foreach (var barrel in GameManager.Instance.LevelController.BarrelList)
-            {
-                float DistanceX = Math.Abs((barrel.Transform.Position.x + barrel.Transform.Scale.x / 2) - (Transform.Position.x + Transform.Scale.x / 2));
-                float DistanceY = Math.Abs((barrel.Transform.Position.y + barrel.Transform.Scale.y / 2) - (Transform.Position.y + Transform.Scale.y / 2));
-
-                float sumHalfWidth = barrel.Transform.Scale.x / 2 + Transform.Scale.x / 2;
-                float sumHalfHeight = barrel.Transform.Scale.y / 2 + Transform.Scale.y / 2;
-
-                if (DistanceX < sumHalfWidth && DistanceY < sumHalfHeight)
-                {
-                    float overlapX = sumHalfWidth - DistanceX;
-                    float overlapY = sumHalfHeight - DistanceY;
-
-                    if (overlapX < overlapY)
-                    {
-                        Transform.Position = Transform.Position.x < barrel.Transform.Position.x
-                            ? new Vector2(Transform.Position.x - overlapX, Transform.Position.y)
-                            : new Vector2(Transform.Position.x + overlapX, Transform.Position.y);
-                    }
-                    else
-                    {
-                        Transform.Position = Transform.Position.y < barrel.Transform.Position.y
-                            ? new Vector2(Transform.Position.x, Transform.Position.y - overlapY)
-                            : new Vector2(Transform.Position.x, Transform.Position.y + overlapY);
-                    }
-                    break;
-                }
-            }
-        }
     }
 }

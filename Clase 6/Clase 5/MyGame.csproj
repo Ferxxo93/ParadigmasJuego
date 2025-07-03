@@ -53,6 +53,7 @@
     <Compile Include="BigEnemy.cs" />
     <Compile Include="BigEnemyMovement.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="CheckCollisionBarrels.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="EnemyMovement.cs" />
     <Compile Include="EnemySpawner.cs" />
@@ -81,7 +82,6 @@
     <None Include="assets\OpenSans-Italic-VariableFont_wdth,wght.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="OpenSans-Italic-VariableFont_wdth,wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\Bullet\" />
