@@ -3,7 +3,7 @@ using System;
 
 public class BigEnemyMovement : EnemyMovement
 {
-    private float slowSpeed = 0.8f; // Más lento que el speed original 1.5f
+    private float slowSpeed = 150f; 
 
     public BigEnemyMovement(Transform transform) : base(transform)
     {

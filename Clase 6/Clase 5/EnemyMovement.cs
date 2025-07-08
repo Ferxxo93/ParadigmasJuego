@@ -4,7 +4,7 @@ using System;
 public class EnemyMovement
 {
     protected Transform transform;
-    private float speed = 1.5f;
+    private float speed = 150f;
     protected float detectionRange = 500f;
 
     public EnemyMovement(Transform transform)

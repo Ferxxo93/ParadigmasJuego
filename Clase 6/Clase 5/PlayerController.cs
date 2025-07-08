@@ -8,7 +8,7 @@ namespace MyGame
     {
         private DateTime timeLastShoot;
         private float timeBetweenShoot = 0.4f;
-        private int speed = 400;
+        private int speed = 20000;
         private float defaultFireRate = 0.4f;
         private float fireRateMultiplier = 1f;
 
@@ -17,7 +17,7 @@ namespace MyGame
 
         private Player player;
 
-        private Vector2 lastVelocity = new Vector2(0, 0); // 🔁 Dirección actual de movimiento
+        private Vector2 lastVelocity = new Vector2(0, 0);
 
         public PlayerController(Transform transform, Player player)
         {
